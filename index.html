@@ -32,7 +32,23 @@
       color: var(--text);
       background: var(--bg);
     }
-    .wrap { max-width: min(2100px, 97vw); margin: 0 auto; padding: 32px 28px 64px; }
+    .page-outer { display: flex; align-items: flex-start; min-height: 100vh; }
+    .page-nav {
+      width: 196px; min-width: 196px; flex-shrink: 0;
+      position: sticky; top: 0; height: 100vh; overflow-y: auto;
+      padding: 36px 18px 36px 20px;
+      border-right: 1px solid var(--line);
+      background: var(--bg);
+      z-index: 20;
+    }
+    .page-nav::-webkit-scrollbar { width: 3px; }
+    .page-nav-heading { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 12px; }
+    .page-nav-list { list-style: none; margin: 0; padding: 0; }
+    .page-nav-list li { margin: 0; }
+    .page-nav-list a { display: block; padding: 6px 0; font-size: 14px; color: var(--text); text-decoration: none; border-radius: 4px; transition: color 0.12s; font-weight: 500; }
+    .page-nav-list a:hover { color: var(--accent2); }
+    .page-nav-list a.active { color: var(--accent2); font-weight: 700; }
+    .wrap { flex: 1; max-width: 1480px; margin: 0; padding: 32px 28px 64px; min-width: 0; }
     header { padding: 32px 0 20px; border-bottom: 2px solid var(--deep); margin-bottom: 24px; text-align: center; }
     h1 { margin: 0 0 8px; font-size: clamp(30px, 3.2vw, 52px); letter-spacing: -0.02em; color: #111827; font-family: "Times New Roman", Times, serif; }
     .org-name { font-size: 26px; font-weight: 700; color: #111827; margin: 8px 0 2px; letter-spacing: -0.01em; font-family: "Times New Roman", Times, serif; }
@@ -75,7 +91,7 @@
     /* ── TOC ── */
     .page-body { display: flex; align-items: flex-start; gap: 20px; margin-top: 8px; }
     .toc-sidebar {
-      width: 190px; flex-shrink: 0;
+      width: 270px; flex-shrink: 0;
       position: sticky; top: 24px;
       max-height: calc(100vh - 48px); overflow-y: auto;
       border-right: 1px solid var(--line);
@@ -125,6 +141,15 @@
     </style>
   </head>
 <body>
+<div class="page-outer">
+  <nav class="page-nav">
+    <div class="page-nav-heading">On this page</div>
+    <ul class="page-nav-list">
+      <li><a href="#dataset-analysis">Dataset Analysis</a></li>
+      <li><a href="#setup-section">Setup</a></li>
+      <li><a href="#task-cards">Task Cards</a></li>
+    </ul>
+  </nav>
   <div class="wrap">
     <header>
       <h1>WEB: WorldEngine Bimanual Manipulation Dataset</h1>
@@ -173,7 +198,7 @@
     </div>
 
     <!-- ── Charts ── -->
-    <div class="charts-section">
+    <div id="dataset-analysis" class="charts-section">
       <div class="chart-card">
         <div class="chart-heading">Top Actions</div>
         <div id="chart-actions" class="chart-host"></div>
@@ -185,7 +210,7 @@
     </div>
 
     <!-- ── Setup ── -->
-    <section style="margin: 0 0 28px;">
+    <section id="setup-section" style="margin: 0 0 28px;">
       <div style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted); margin-bottom:14px;">Setup</div>
       <div style="display:flex; gap:16px; align-items:flex-start;">
         <figure style="flex:1; margin:0;">
@@ -199,7 +224,7 @@
       </div>
     </section>
 
-    <div class="page-body">
+    <div id="task-cards" class="page-body">
       <nav class="toc-sidebar" aria-label="Table of contents">
         <div class="toc-heading">Contents</div>
         <ul class="toc-list" id="toc-list"></ul>
@@ -4708,30 +4733,39 @@
     </div>
       </div><!-- /.main-column -->
     </div><!-- /.page-body -->
-  </div>
+  </div><!-- /.wrap -->
+</div><!-- /.page-outer -->
 
 
   <script id="charts-js">
   (function() {
-    const ACTIONS = [{"label":"sort","value":11},{"label":"organize","value":10},{"label":"stack","value":6},{"label":"pack","value":5},{"label":"set","value":5},{"label":"return","value":4},{"label":"hang","value":3},{"label":"arrange","value":3},{"label":"put","value":3},{"label":"bag","value":3},{"label":"remove","value":3},{"label":"roll","value":3},{"label":"fold","value":3},{"label":"open","value":3},{"label":"stand","value":2},{"label":"pour","value":2},{"label":"plug","value":2},{"label":"insert","value":2},{"label":"solve","value":2},{"label":"load","value":2},{"label":"prepare","value":2},{"label":"clean","value":2},{"label":"transfer","value":2},{"label":"close","value":1},{"label":"clear","value":1},{"label":"connect","value":1},{"label":"dry","value":1},{"label":"lift","value":1},{"label":"rotate","value":1},{"label":"move","value":1},{"label":"bounce","value":1},{"label":"place","value":1},{"label":"push","value":1},{"label":"seal","value":1},{"label":"collect","value":1},{"label":"assemble","value":1},{"label":"unload","value":1},{"label":"untie","value":1},{"label":"unplug","value":1},{"label":"wrap","value":1}];
-    const OBJECTS = [{"label":"rack","value":7},{"label":"storage","value":5},{"label":"plates","value":5},{"label":"jewelry","value":4},{"label":"shoes","value":4},{"label":"board","value":4},{"label":"pairs","value":3},{"label":"dishes","value":3},{"label":"coffee","value":3},{"label":"dice","value":3},{"label":"plate","value":3},{"label":"tower","value":3},{"label":"puzzle","value":3},{"label":"balls","value":3},{"label":"containers","value":3},{"label":"clothes","value":2},{"label":"ball","value":2},{"label":"shopping","value":2},{"label":"bags","value":2},{"label":"objects","value":2},{"label":"contents","value":2},{"label":"supplies","value":2},{"label":"extension","value":2},{"label":"pods","value":2},{"label":"carousel","value":2},{"label":"utensils","value":2},{"label":"container","value":2},{"label":"desk","value":2},{"label":"bowls","value":2},{"label":"paper","value":2},{"label":"towel","value":2},{"label":"hanoi","value":2},{"label":"rings","value":2},{"label":"labelled","value":2},{"label":"dishwasher","value":2},{"label":"match","value":2},{"label":"office","value":2},{"label":"food","value":2},{"label":"sports","value":2},{"label":"equipment","value":2},{"label":"game","value":2},{"label":"tennis","value":2},{"label":"tray","value":2},{"label":"trash","value":2},{"label":"cables","value":2},{"label":"accessory","value":1},{"label":"baby","value":1},{"label":"piles","value":1},{"label":"badminton","value":1},{"label":"basket","value":1}];
+    const ACTIONS = [{"label": "organize", "value": 5170}, {"label": "sort", "value": 3982}, {"label": "pour", "value": 3777}, {"label": "stack", "value": 3535}, {"label": "put", "value": 2647}, {"label": "pack", "value": 2630}, {"label": "set", "value": 2212}, {"label": "return", "value": 2119}, {"label": "roll", "value": 1824}, {"label": "transfer", "value": 1821}, {"label": "arrange", "value": 1807}, {"label": "lift", "value": 1642}, {"label": "clean", "value": 1544}, {"label": "open", "value": 1501}, {"label": "hang", "value": 1476}, {"label": "bounce", "value": 1360}, {"label": "fold", "value": 1197}, {"label": "insert", "value": 1167}, {"label": "bag", "value": 1139}, {"label": "load", "value": 1036}, {"label": "solve", "value": 1013}, {"label": "remove", "value": 988}, {"label": "prepare", "value": 959}, {"label": "collect", "value": 774}, {"label": "clear", "value": 744}, {"label": "rotate", "value": 674}, {"label": "move", "value": 674}, {"label": "dry", "value": 651}, {"label": "connect", "value": 605}, {"label": "plug", "value": 593}, {"label": "stand", "value": 532}, {"label": "wrap", "value": 482}, {"label": "push", "value": 467}, {"label": "close", "value": 463}, {"label": "unload", "value": 432}, {"label": "assemble", "value": 418}, {"label": "unpack", "value": 402}, {"label": "seal", "value": 379}, {"label": "unplug", "value": 323}, {"label": "retrieve", "value": 276}];
+    const OBJECTS = [{"label": "contents", "value": 3952}, {"label": "rack", "value": 3485}, {"label": "bowl", "value": 3361}, {"label": "box", "value": 2978}, {"label": "storage", "value": 2298}, {"label": "pairs", "value": 2288}, {"label": "tower", "value": 2217}, {"label": "plates", "value": 2201}, {"label": "puzzle", "value": 2017}, {"label": "jewelry", "value": 1949}, {"label": "office", "value": 1904}, {"label": "tray", "value": 1892}, {"label": "dice", "value": 1824}, {"label": "shoes", "value": 1820}, {"label": "plate", "value": 1819}, {"label": "toy", "value": 1763}, {"label": "ball", "value": 1714}, {"label": "supplies", "value": 1670}, {"label": "pot", "value": 1642}, {"label": "shelf", "value": 1642}, {"label": "balls", "value": 1641}, {"label": "dishes", "value": 1574}, {"label": "hanoi", "value": 1541}, {"label": "containers", "value": 1532}, {"label": "rings", "value": 1420}, {"label": "food", "value": 1399}, {"label": "paddle", "value": 1360}, {"label": "pieces", "value": 1310}, {"label": "paper", "value": 1303}, {"label": "towel", "value": 1303}, {"label": "tennis", "value": 1174}, {"label": "bricks", "value": 1115}, {"label": "bento", "value": 1052}, {"label": "compartments", "value": 1052}, {"label": "coffee", "value": 1020}, {"label": "equipment", "value": 927}, {"label": "matching", "value": 915}, {"label": "bowls", "value": 910}, {"label": "desk", "value": 900}, {"label": "utensils", "value": 881}, {"label": "container", "value": 881}, {"label": "scoop", "value": 856}, {"label": "utensil", "value": 856}, {"label": "onto", "value": 850}, {"label": "shopping", "value": 832}, {"label": "battery", "value": 831}, {"label": "mouse", "value": 831}, {"label": "board", "value": 830}, {"label": "dishwasher", "value": 830}, {"label": "check", "value": 808}];
 
     const tip = document.createElement('div');
     tip.className = 'chart-tooltip';
     document.body.appendChild(tip);
 
+    function fmt(v) {
+      if (v >= 1000) return (v / 1000 % 1 === 0 ? v/1000 : (v/1000).toFixed(1)) + 'k';
+      return String(v);
+    }
+
     function makeChart(hostId, data, barColor) {
       const host = document.getElementById(hostId);
-      const W = Math.max(host.getBoundingClientRect().width || host.parentElement.getBoundingClientRect().width || 900, 600);
-      const mT = 16, mR = 24, mB = 132, mL = 44;
+      const W = Math.max(host.getBoundingClientRect().width || host.parentElement.getBoundingClientRect().width || 900, 400);
+      const mT = 16, mR = 24, mB = 120, mL = 52;
       const iW = W - mL - mR;
-      const iH = 240;
+      const iH = 220;
       const H = iH + mT + mB;
       const n = data.length;
       const maxVal = data[0].value;
+      const logMax = Math.log10(maxVal);
       const slotW = iW / n;
-      const barW = Math.max(slotW * 0.70, 4);
+      const barW = Math.max(slotW * 0.68, 3);
       const NS = 'http://www.w3.org/2000/svg';
+
+      function logH(v) { return v <= 0 ? 0 : (Math.log10(Math.max(v,1)) / logMax) * iH; }
 
       const svg = document.createElementNS(NS, 'svg');
       svg.setAttribute('width', '100%');
@@ -4743,37 +4777,46 @@
       g.setAttribute('transform', `translate(${mL},${mT})`);
       svg.appendChild(g);
 
-      // gridlines + y-axis labels
-      [0, 0.25, 0.5, 0.75, 1].forEach(t => {
-        const y = iH * (1 - t);
+      // log-scale gridlines at powers of 10
+      const ticks = [];
+      for (let p = 1; Math.pow(10,p) <= maxVal * 1.5; p++) ticks.push(Math.pow(10,p));
+      ticks.forEach((v, ti) => {
+        const y = iH - logH(v);
+        if (y < 0 || y > iH + 4) return;
         const line = document.createElementNS(NS, 'line');
         line.setAttribute('x1', 0); line.setAttribute('x2', iW);
         line.setAttribute('y1', y); line.setAttribute('y2', y);
-        line.setAttribute('stroke', t === 0 ? 'rgba(0,0,0,0.18)' : 'rgba(0,0,0,0.07)');
-        if (t > 0) line.setAttribute('stroke-dasharray', '4,4');
+        line.setAttribute('stroke', v === 1 ? 'rgba(0,0,0,0.18)' : 'rgba(0,0,0,0.08)');
+        line.setAttribute('stroke-dasharray', '4,4');
         g.appendChild(line);
         const txt = document.createElementNS(NS, 'text');
         txt.setAttribute('x', -6); txt.setAttribute('y', y + 4);
         txt.setAttribute('text-anchor', 'end');
-        txt.setAttribute('font-size', '12');
+        txt.setAttribute('font-size', '11');
         txt.setAttribute('fill', '#64748B');
         txt.setAttribute('font-family', "'IBM Plex Mono',ui-monospace,monospace");
-        txt.textContent = Math.round(maxVal * t);
+        txt.textContent = fmt(v);
         g.appendChild(txt);
       });
+      // baseline
+      const base = document.createElementNS(NS, 'line');
+      base.setAttribute('x1', 0); base.setAttribute('x2', iW);
+      base.setAttribute('y1', iH); base.setAttribute('y2', iH);
+      base.setAttribute('stroke', 'rgba(0,0,0,0.18)');
+      g.appendChild(base);
 
-      // bars + x-axis labels (bars start at iH, will animate up)
+      // bars + x-axis labels
       const rects = [];
       data.forEach((d, i) => {
-        const fullH = Math.max((d.value / maxVal) * iH, 2);
+        const fullH = Math.max(logH(d.value), 2);
         const bx = i * slotW + (slotW - barW) / 2;
         const cx = i * slotW + slotW / 2;
 
         const rect = document.createElementNS(NS, 'rect');
         rect.setAttribute('x', bx);
-        rect.setAttribute('y', iH);        // start collapsed at baseline
+        rect.setAttribute('y', iH);
         rect.setAttribute('width', barW);
-        rect.setAttribute('height', 0);    // start at 0
+        rect.setAttribute('height', 0);
         rect.setAttribute('rx', 2);
         rect.setAttribute('fill', barColor);
         rect.style.cursor = 'default';
@@ -4781,9 +4824,8 @@
         rect.dataset.fullH = fullH;
 
         rect.addEventListener('mouseenter', () => {
-          rect.setAttribute('fill', barColor);
-          rect.style.opacity = '0.6';
-          tip.textContent = d.label + ': ' + d.value;
+          rect.style.opacity = '0.65';
+          tip.textContent = d.label + ': ' + fmt(d.value) + ' episodes';
           tip.style.opacity = '1';
         });
         rect.addEventListener('mousemove', e => {
@@ -4801,7 +4843,7 @@
         xl.setAttribute('x', cx); xl.setAttribute('y', iH + 10);
         xl.setAttribute('transform', `rotate(-45,${cx},${iH + 10})`);
         xl.setAttribute('text-anchor', 'end');
-        xl.setAttribute('font-size', '12');
+        xl.setAttribute('font-size', '11');
         xl.setAttribute('fill', '#64748B');
         xl.setAttribute('font-family', "'IBM Plex Mono',ui-monospace,monospace");
         xl.textContent = d.label;
@@ -4865,6 +4907,21 @@
       cards.forEach(c => observer.observe(c));
     });
   })();
+  </script>
+
+  <script>
+    // Page-nav active link highlighting
+    const pageNavLinks = document.querySelectorAll('.page-nav-list a');
+    const pageSections = ['dataset-analysis','setup-section','task-cards'].map(id => document.getElementById(id)).filter(Boolean);
+    const pageNavObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const href = '#' + entry.target.id;
+          pageNavLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === href));
+        }
+      });
+    }, { rootMargin: '-10% 0px -70% 0px' });
+    pageSections.forEach(s => pageNavObs.observe(s));
   </script>
   </body>
 </html>
