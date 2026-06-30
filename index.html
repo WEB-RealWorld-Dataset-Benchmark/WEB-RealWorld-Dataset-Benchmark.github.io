@@ -7,17 +7,20 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #F7FAFA;
+      --bg: #FAFCFC;
+      --bg-section: #F0F7F7;
       --card: #FFFFFF;
-      --text: #0F172A;
-      --muted: #64748B;
-      --line: #E2E8F0;
-      --accent: #1E6BFF;
-      --accent2: #20C997;
-      --deep: #102A43;
-      --cyan: #7FD7E8;
-      --soft-green: #DDF8EF;
-      --shadow: 0 2px 14px rgba(16,42,67,0.08);
+      --text: #111827;
+      --muted: #475569;
+      --line: #D9E6E6;
+      --accent: #2563EB;
+      --accent2: #00A878;
+      --deep: #006C5B;
+      --cyan: #B8F2E6;
+      --soft-green: #B8F2E6;
+      --soft-blue: #DCEBFF;
+      --mint: #B8F2E6;
+      --shadow: 0 2px 14px rgba(0,108,91,0.08);
     }
     * { box-sizing: border-box; }
     body {
@@ -32,18 +35,12 @@
     .subtitle { max-width: 900px; color: var(--muted); line-height: 1.8; margin: 0; font-size: 17px; }
     .subtitle .affil { font-size: 14px; vertical-align: super; }
     .grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 18px 0 26px; }
-    .card, .task-card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .task-card { background: var(--bg-section); border: 1px solid var(--line); box-shadow: var(--shadow); }
     .card { border-radius: 22px; padding: 18px 18px 16px; }
     .metric-label { font-size: 14px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 8px; }
     .metric-value { font-size: 36px; font-weight: 800; letter-spacing: -0.04em; }
     .metric-note { color: var(--muted); font-size: 15px; margin-top: 6px; line-height: 1.45; }
-    .toolbar { display: flex; gap: 12px; align-items: center; margin: 4px 0 18px; flex-wrap: wrap; }
-    .toolbar input {
-      flex: 1 1 320px; min-width: 260px;
-      border: 1px solid var(--line); border-radius: 14px;
-      padding: 12px 14px; font-size: 16px; background: rgba(255,255,255,0.92);
-    }
-    .toolbar .hint { color: var(--muted); font-size: 15px; }
     .task-card { border-radius: 20px; margin: 0 0 14px; overflow: clip; }
     summary { list-style: none; cursor: pointer; padding: 18px 18px; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
     summary::-webkit-details-marker { display: none; }
@@ -58,7 +55,7 @@
     .value { font-weight: 700; word-break: break-word; }
     .section { margin-top: 16px; }
     .section-title { font-size: 17px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 8px; }
-    .prompt { white-space: pre-wrap; line-height: 1.55; background: rgba(255,255,255,0.72); border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
+    .prompt { white-space: pre-wrap; line-height: 1.55; background: rgba(255,255,255,0.85); border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
     .prompt.present { color: var(--text); }
     .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .pill { display: inline-flex; border-radius: 999px; padding: 7px 10px; border: 1px solid var(--line); background: rgba(255,255,255,0.8); font-size: 16px; }
@@ -70,7 +67,6 @@
     .path-line { font-size: 13px; color: var(--muted); margin-top: 5px; overflow-wrap: anywhere; }
     .path-line span { color: var(--text); font-weight: 700; }
     .small .section-title { margin-bottom: 6px; }
-    .filter-hidden { display: none !important; }
     /* ── TOC ── */
     .page-body { display: flex; align-items: flex-start; gap: 32px; margin-top: 8px; }
     .toc-sidebar {
@@ -190,10 +186,6 @@
         <div class="metric-value">923 hrs</div>
         <div class="metric-note">Of real-world bimanual robot interaction</div>
       </div>
-    </div>
-
-    <div class="toolbar">
-      <input id="filter" type="search" placeholder="Filter by task name or description" />
     </div>
 
     <!-- ── Charts ── -->
@@ -5619,17 +5611,6 @@
     </div><!-- /.page-body -->
   </div>
 
-  <script>
-    const filter = document.getElementById('filter');
-    const cards = Array.from(document.querySelectorAll('.task-card'));
-    filter.addEventListener('input', () => {
-      const query = filter.value.trim().toLowerCase();
-      for (const card of cards) {
-        const text = card.innerText.toLowerCase();
-        card.classList.toggle('filter-hidden', query && !text.includes(query));
-      }
-    });
-  </script>
 
     <script id="prompt-edit-js">
       // load current prompts from prompts_merged.json on every page load
@@ -5813,8 +5794,8 @@
 
     // defer until layout is complete so getBoundingClientRect() returns real widths
     window.addEventListener('load', function() {
-      makeChart('chart-actions', ACTIONS, '#1E6BFF');   // primary-blue
-      makeChart('chart-objects', OBJECTS, '#20C997');   // primary-green
+      makeChart('chart-actions', ACTIONS, '#2563EB');   // primary-blue
+      makeChart('chart-objects', OBJECTS, '#00A878');   // primary-green
 
       // Build TOC
       const tocList = document.getElementById('toc-list');
