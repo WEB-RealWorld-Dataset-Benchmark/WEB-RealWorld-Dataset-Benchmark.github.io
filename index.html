@@ -37,19 +37,21 @@
       width: 196px; min-width: 196px; flex-shrink: 0;
       position: sticky; top: 0; height: 100vh; overflow-y: auto;
       padding: 36px 18px 36px 20px;
-      border-right: 1px solid var(--line);
-      background: var(--bg);
+      background: rgba(250,252,252,0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       z-index: 20;
     }
     .page-nav::-webkit-scrollbar { width: 3px; }
-    .page-nav-heading { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 12px; }
+    .page-nav-heading { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: #bbbfc7; margin-bottom: 12px; }
     .page-nav-list { list-style: none; margin: 0; padding: 0; }
     .page-nav-list li { margin: 0; }
-    .page-nav-list a { display: block; padding: 6px 0; font-size: 14px; color: var(--text); text-decoration: none; border-radius: 4px; transition: color 0.12s; font-weight: 500; }
-    .page-nav-list a:hover { color: var(--accent2); }
+    .page-nav-list a { display: block; padding: 6px 0; font-size: 14px; color: #b0b8c1; text-decoration: none; border-radius: 4px; transition: color 0.15s; font-weight: 500; }
+    .page-nav-list a:hover { color: var(--text); }
     .page-nav-list a.active { color: var(--accent2); font-weight: 700; }
     .wrap { flex: 1; max-width: 1480px; margin: 0; padding: 32px 28px 64px; min-width: 0; }
-    header { padding: 32px 0 20px; border-bottom: 2px solid var(--deep); margin-bottom: 24px; text-align: center; }
+    header { padding: 32px 0 20px; margin-bottom: 24px; text-align: center; }
+    .sec-heading { font-family: "Times New Roman", Times, serif; font-size: clamp(22px, 2.2vw, 34px); font-weight: 700; color: #111827; letter-spacing: -0.02em; margin: 0 0 16px; line-height: 1.1; }
     h1 { margin: 0 0 8px; font-size: clamp(30px, 3.2vw, 52px); letter-spacing: -0.02em; color: #111827; font-family: "Times New Roman", Times, serif; }
     .org-name { font-size: 26px; font-weight: 700; color: #111827; margin: 8px 0 2px; letter-spacing: -0.01em; font-family: "Times New Roman", Times, serif; }
     .subtitle { color: var(--muted); line-height: 1.7; margin: 0; font-size: 16px; }
@@ -107,9 +109,9 @@
     .toc-list a.active { color: var(--accent); font-weight: 600; }
     .main-column { flex: 1; min-width: 0; }
     /* ── charts ── */
-    .charts-section { display: flex; flex-direction: row; gap: 10px; margin: 0 0 20px; }
-    .chart-card { flex: 1; min-width: 0; background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 16px 20px 12px; box-shadow: var(--shadow); }
-    .chart-heading { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 14px; }
+    .charts-section { display: flex; flex-direction: row; gap: 32px; margin: 0 0 20px; }
+    .chart-card { flex: 1; min-width: 0; padding: 0; }
+    .chart-heading { font-family: "Times New Roman", Times, serif; font-size: clamp(20px, 1.8vw, 28px); font-weight: 700; color: #111827; letter-spacing: -0.02em; margin-bottom: 12px; }
     .chart-host { width: 100%; overflow-x: auto; }
     .chart-host svg { display: block; }
     .chart-tooltip { font-family: 'IBM Plex Mono', ui-monospace, monospace; position: fixed; background: var(--deep); color: #fff; padding: 6px 12px; border-radius: 10px; font-size: 14px; font-weight: 600; pointer-events: none; opacity: 0; transition: opacity 0.12s; z-index: 9999; white-space: nowrap; }
@@ -198,6 +200,7 @@
     </div>
 
     <!-- ── Charts ── -->
+    <h2 class="sec-heading">Dataset Analysis</h2>
     <div id="dataset-analysis" class="charts-section">
       <div class="chart-card">
         <div class="chart-heading">Top Actions</div>
@@ -210,20 +213,21 @@
     </div>
 
     <!-- ── Setup ── -->
-    <section id="setup-section" style="margin: 0 0 28px;">
-      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted); margin-bottom:14px;">Setup</div>
-      <div style="display:flex; gap:16px; align-items:flex-start;">
-        <figure style="flex:1; margin:0;">
-          <img src="figures/front_view.png" alt="Robot setup front view" loading="lazy" style="width:100%; border-radius:12px; display:block; border:1px solid var(--line);">
+    <section id="setup-section" style="margin: 0 0 32px;">
+      <h2 class="sec-heading">Setup</h2>
+      <div style="display:flex; gap:16px; align-items:stretch;">
+        <figure style="flex:0 0 50%; margin:0; max-width:50%;">
+          <img src="figures/front_view.png" alt="Robot setup front view" loading="lazy" style="width:100%; height:100%; object-fit:cover; border-radius:12px; display:block; border:1px solid var(--line);">
           <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12px; color:var(--muted); margin-top:6px; text-align:center;">Front view</figcaption>
         </figure>
-        <figure style="flex:1; margin:0;">
-          <img src="figures/back_view.png" alt="Robot setup back view" loading="lazy" style="width:100%; border-radius:12px; display:block; border:1px solid var(--line);">
+        <figure style="flex:0 0 calc(50% - 16px); margin:0; max-width:calc(50% - 16px);">
+          <img src="figures/back_view.png" alt="Robot setup back view" loading="lazy" style="width:100%; height:100%; object-fit:cover; border-radius:12px; display:block; border:1px solid var(--line);">
           <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12px; color:var(--muted); margin-top:6px; text-align:center;">Back view</figcaption>
         </figure>
       </div>
     </section>
 
+    <h2 class="sec-heading">Task Cards</h2>
     <div id="task-cards" class="page-body">
       <nav class="toc-sidebar" aria-label="Table of contents">
         <div class="toc-heading">Contents</div>
@@ -4873,8 +4877,8 @@
 
     // defer until layout is complete so getBoundingClientRect() returns real widths
     window.addEventListener('load', function() {
-      makeChart('chart-actions', ACTIONS, '#2563EB');   // primary-blue
-      makeChart('chart-objects', OBJECTS, '#00A878');   // primary-green
+      makeChart('chart-actions', ACTIONS.slice(0, 20), '#2563EB');
+      makeChart('chart-objects', OBJECTS.slice(0, 25), '#00A878');
 
       // Build TOC
       const tocList = document.getElementById('toc-list');
