@@ -26,8 +26,9 @@
     }
     .wrap { max-width: 1320px; margin: 0 auto; padding: 32px 20px 64px; }
     header { padding: 32px 0 20px; border-bottom: 2px solid #111; margin-bottom: 24px; }
-    h1 { margin: 0 0 8px; font-size: clamp(36px, 4vw, 62px); letter-spacing: -0.02em; color: #111; }
-    .subtitle { max-width: 900px; color: #444; line-height: 1.6; margin: 0; font-size: 17px; }
+    h1 { margin: 0 0 8px; font-size: clamp(30px, 3.2vw, 52px); letter-spacing: -0.02em; color: #111; }
+    .subtitle { max-width: 900px; color: #444; line-height: 1.8; margin: 0; font-size: 17px; }
+    .subtitle .affil { font-size: 14px; vertical-align: super; }
     .grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 18px 0 26px; }
     .card, .task-card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); backdrop-filter: blur(8px); }
     .card { border-radius: 22px; padding: 18px 18px 16px; }
@@ -61,8 +62,8 @@
     .pill { display: inline-flex; border-radius: 999px; padding: 7px 10px; border: 1px solid var(--line); background: rgba(255,255,255,0.8); font-size: 16px; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
     .video-player { text-align: center; }
-    .montage-wrap { text-align: center; }
-    .montage-wrap img { margin: 0 auto; }
+    .montage-wrap { text-align: left; }
+    .montage-wrap img { margin: 0; }
     .video-label { margin-top: 8px; font-size: 15px; color: var(--muted); word-break: break-all; }
     .path-line { font-size: 13px; color: var(--muted); margin-top: 5px; overflow-wrap: anywhere; }
     .path-line span { color: var(--text); font-weight: 700; }
@@ -147,7 +148,18 @@
   <div class="wrap">
     <header>
       <h1>WEB: WorldEngine Bimanual Manipulation Dataset</h1>
-      <p class="subtitle">for Real-World Post-training and Benchmark. Each card shows the task name, natural language description, episode/frame totals, discovered video files, and camera breakdowns. Videos are embedded with HTML5 players—use the play controls to stream or download.</p>
+      <p class="subtitle">
+        Shiduo Zhang<span class="affil">1,3</span>&ensp;
+        Yuchun Feng<span class="affil">1</span>&ensp;
+        Haonan Chang<span class="affil">1</span>&ensp;
+        Di Huang<span class="affil">1</span>&ensp;
+        Yue Wang<span class="affil">1,2</span>
+      </p>
+      <p class="subtitle" style="font-size:15px; margin-top:6px; color:#666;">
+        <sup>1</sup>WorldEngine AI&emsp;
+        <sup>2</sup>University of Southern California&emsp;
+        <sup>3</sup>Fudan University
+      </p>
     </header>
 
     <div class="grid">
@@ -250,7 +262,6 @@
                 <source src="accessory-return/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="accessory-return/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -314,7 +325,6 @@
                 <source src="arrange-shoes-in-pairs/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="arrange-shoes-in-pairs/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -372,7 +382,6 @@
                 <source src="baby-clothes-sorting/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="baby-clothes-sorting/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -434,7 +443,6 @@
                 <source src="badminton-clean-up/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="badminton-clean-up/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -496,7 +504,6 @@
                 <source src="bag-packing-with-zipper-closure/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="bag-packing-with-zipper-closure/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -554,7 +561,6 @@
                 <source src="bagging-groceries/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="bagging-groceries/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -611,7 +617,6 @@
                 <source src="balance-scale/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="balance-scale/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -669,7 +674,6 @@
                 <source src="bowl-pouring/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="bowl-pouring/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -725,7 +729,6 @@
                 <source src="bracelet-return/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="bracelet-return/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -783,7 +786,6 @@
                 <source src="breakroom-essentials-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="breakroom-essentials-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -842,7 +844,6 @@
                 <source src="brick-stacking/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="brick-stacking/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -902,7 +903,6 @@
                 <source src="bussing-table/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="bussing-table/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -961,7 +961,6 @@
                 <source src="cable-assembling/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="cable-assembling/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1017,7 +1016,6 @@
                 <source src="clean-up-board-game/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="clean-up-board-game/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1081,7 +1079,6 @@
                 <source src="clothes-rack-return/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="clothes-rack-return/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1140,7 +1137,6 @@
                 <source src="coffee-pods-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="coffee-pods-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1198,7 +1194,6 @@
                 <source src="coffee-pods-retrieval/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="coffee-pods-retrieval/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1255,7 +1250,6 @@
                 <source src="color-sorting-items/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="color-sorting-items/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1316,7 +1310,6 @@
                 <source src="connect-pipe-segments/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="connect-pipe-segments/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1373,7 +1366,6 @@
                 <source src="cooking-utensils-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="cooking-utensils-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1434,7 +1426,6 @@
                 <source src="decorate-a-cake_toy_version/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="decorate-a-cake_toy_version/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1490,7 +1481,6 @@
                 <source src="desk-rack-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="desk-rack-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1549,7 +1539,6 @@
                 <source src="dice-roll-block/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="dice-roll-block/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1609,7 +1598,6 @@
                 <source src="dinnerware-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="dinnerware-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1669,7 +1657,6 @@
                 <source src="dry-asparagus/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="dry-asparagus/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1727,7 +1714,6 @@
                 <source src="fill-piggy-bank/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="fill-piggy-bank/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1789,7 +1775,6 @@
                 <source src="grocery-bag-folding/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="grocery-bag-folding/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1846,7 +1831,6 @@
                 <source src="hang-baseball-hats/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="hang-baseball-hats/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1909,7 +1893,6 @@
                 <source src="hanoi-tower-ring-placement/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="hanoi-tower-ring-placement/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -1966,7 +1949,6 @@
                 <source src="hardware-sorting/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="hardware-sorting/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2024,7 +2006,6 @@
                 <source src="insert-mouse-battery/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="insert-mouse-battery/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2083,7 +2064,6 @@
                 <source src="jenga-game-preparation/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="jenga-game-preparation/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2139,7 +2119,6 @@
                 <source src="jewlery-rings-return/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="jewlery-rings-return/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2197,7 +2176,6 @@
                 <source src="lift-a-pot/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="lift-a-pot/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2256,7 +2234,6 @@
                 <source src="load-dishware-rack/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="load-dishware-rack/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2413,7 +2390,6 @@
                 <source src="mechanical-lock-puzzle/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="mechanical-lock-puzzle/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2476,7 +2452,6 @@
                 <source src="mining-balls/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="mining-balls/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2537,7 +2512,6 @@
                 <source src="multiple-dice-ordering/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="multiple-dice-ordering/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2595,7 +2569,6 @@
                 <source src="office-desk-rack-setup/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="office-desk-rack-setup/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2656,7 +2629,6 @@
                 <source src="open-lock-box/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="open-lock-box/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2717,7 +2689,6 @@
                 <source src="open-sealed-box-and-take-something-out/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="open-sealed-box-and-take-something-out/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2776,7 +2747,6 @@
                 <source src="organize-office-supplies/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="organize-office-supplies/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2837,7 +2807,6 @@
                 <source src="pack-bento-box/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="pack-bento-box/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2901,7 +2870,6 @@
                 <source src="pack-lunch-boxes/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="pack-lunch-boxes/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -2960,7 +2928,6 @@
                 <source src="pack-sports-bag/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="pack-sports-bag/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3021,7 +2988,6 @@
                 <source src="pack-suitcase-for-trip/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="pack-suitcase-for-trip/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3079,7 +3045,6 @@
                 <source src="paddle-bouncing-a-ping-pong-ball/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="paddle-bouncing-a-ping-pong-ball/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3138,7 +3103,6 @@
                 <source src="paper-towel-setup/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="paper-towel-setup/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3194,7 +3158,6 @@
                 <source src="place-books-into-shelves/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="place-books-into-shelves/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3257,7 +3220,6 @@
                 <source src="pour-instant-coffee/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="pour-instant-coffee/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3320,7 +3282,6 @@
                 <source src="prepare-new-shoes/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="prepare-new-shoes/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3380,7 +3341,6 @@
                 <source src="prepare-sandwich/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="prepare-sandwich/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3450,7 +3410,6 @@
                 <source src="push-buttons-in-sequence/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="push-buttons-in-sequence/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3509,7 +3468,6 @@
                 <source src="restaurant-takeout/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="restaurant-takeout/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3565,7 +3523,6 @@
                 <source src="return-necklaces/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="return-necklaces/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3627,7 +3584,6 @@
                 <source src="return-new-shoes/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="return-new-shoes/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3688,7 +3644,6 @@
                 <source src="roll-dice-write-on-blackboard/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="roll-dice-write-on-blackboard/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3747,7 +3702,6 @@
                 <source src="scoop-with-containers/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="scoop-with-containers/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3810,7 +3764,6 @@
                 <source src="seal-water-bottle-cap/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="seal-water-bottle-cap/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3869,7 +3822,6 @@
                 <source src="separate-sports-equipment/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="separate-sports-equipment/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -3936,7 +3888,6 @@
                 <source src="set-up-board-game/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="set-up-board-game/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4113,7 +4064,6 @@
                 <source src="shape-sorter/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="shape-sorter/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4170,7 +4120,6 @@
                 <source src="shopping-basket-loading/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="shopping-basket-loading/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4306,7 +4255,6 @@
                 <source src="sock-matching-and-folding/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="sock-matching-and-folding/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4369,7 +4317,6 @@
                 <source src="sort-fruits-and-vegetables/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="sort-fruits-and-vegetables/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4428,7 +4375,6 @@
                 <source src="sort-kitchen-utensils/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="sort-kitchen-utensils/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4487,7 +4433,6 @@
                 <source src="sort-lego-by-color/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="sort-lego-by-color/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4545,7 +4490,6 @@
                 <source src="sort-toy-vehicles/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="sort-toy-vehicles/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4605,7 +4549,6 @@
                 <source src="stack-3d-prints/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="stack-3d-prints/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4667,7 +4610,6 @@
                 <source src="stack-nesting-cups/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="stack-nesting-cups/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4727,7 +4669,6 @@
                 <source src="tableware-stacking/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="tableware-stacking/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4785,7 +4726,6 @@
                 <source src="tennis-ball-cleanup/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="tennis-ball-cleanup/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4846,7 +4786,6 @@
                 <source src="tennis-preparation/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="tennis-preparation/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4907,7 +4846,6 @@
                 <source src="tool-collection-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="tool-collection-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -4969,7 +4907,6 @@
                 <source src="towel-folding-and-stacking/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="towel-folding-and-stacking/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5028,7 +4965,6 @@
                 <source src="tower-of-hanoi-game/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="tower-of-hanoi-game/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5087,7 +5023,6 @@
                 <source src="toy-robot/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="toy-robot/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5145,7 +5080,6 @@
                 <source src="transfer-items-with-a-tray/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="transfer-items-with-a-tray/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5203,7 +5137,6 @@
                 <source src="transfer-storage-items/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="transfer-storage-items/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5261,7 +5194,6 @@
                 <source src="trash-sorting/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="trash-sorting/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5320,7 +5252,6 @@
                 <source src="unload-dish-rack/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="unload-dish-rack/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5379,7 +5310,6 @@
                 <source src="untie-shoelaces/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="untie-shoelaces/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5436,7 +5366,6 @@
                 <source src="usb-cable-disassembling/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="usb-cable-disassembling/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5497,7 +5426,6 @@
                 <source src="usb-plugging/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="usb-plugging/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5558,7 +5486,6 @@
                 <source src="vacuum-dirty-surface/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="vacuum-dirty-surface/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5618,7 +5545,6 @@
                 <source src="whiteboard-supplies-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="whiteboard-supplies-organization/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5677,7 +5603,6 @@
                 <source src="wrap-a-toy-for-storage/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="wrap-a-toy-for-storage/videos/observation.images.cam_high/chunk-000/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
-              <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
               <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
@@ -5776,7 +5701,7 @@
     tip.className = 'chart-tooltip';
     document.body.appendChild(tip);
 
-    function makeChart(hostId, data, gradTop, gradBot) {
+    function makeChart(hostId, data, barColor) {
       const host = document.getElementById(hostId);
       const W = Math.max(host.getBoundingClientRect().width || host.parentElement.getBoundingClientRect().width || 900, 600);
       const mT = 16, mR = 24, mB = 132, mL = 44;
@@ -5795,21 +5720,6 @@
       svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
       svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
 
-      const defs = document.createElementNS(NS, 'defs');
-      const gid = 'grad-' + hostId;
-      const grad = document.createElementNS(NS, 'linearGradient');
-      grad.setAttribute('id', gid);
-      grad.setAttribute('x1','0'); grad.setAttribute('y1','0');
-      grad.setAttribute('x2','0'); grad.setAttribute('y2','1');
-      [[0, gradTop],[100, gradBot]].forEach(([pct, col]) => {
-        const s = document.createElementNS(NS, 'stop');
-        s.setAttribute('offset', pct + '%');
-        s.setAttribute('stop-color', col);
-        grad.appendChild(s);
-      });
-      defs.appendChild(grad);
-      svg.appendChild(defs);
-
       const g = document.createElementNS(NS, 'g');
       g.setAttribute('transform', `translate(${mL},${mT})`);
       svg.appendChild(g);
@@ -5820,36 +5730,40 @@
         const line = document.createElementNS(NS, 'line');
         line.setAttribute('x1', 0); line.setAttribute('x2', iW);
         line.setAttribute('y1', y); line.setAttribute('y2', y);
-        line.setAttribute('stroke', 'rgba(0,0,0,0.10)');
-        if (t > 0) line.setAttribute('stroke-dasharray', '5,4');
+        line.setAttribute('stroke', t === 0 ? 'rgba(0,0,0,0.18)' : 'rgba(0,0,0,0.07)');
+        if (t > 0) line.setAttribute('stroke-dasharray', '4,4');
         g.appendChild(line);
         const txt = document.createElementNS(NS, 'text');
         txt.setAttribute('x', -6); txt.setAttribute('y', y + 4);
         txt.setAttribute('text-anchor', 'end');
         txt.setAttribute('font-size', '15');
-        txt.setAttribute('fill', '#555555');
+        txt.setAttribute('fill', '#888');
         txt.setAttribute('font-family', '"Times New Roman",Times,serif');
         txt.textContent = Math.round(maxVal * t);
         g.appendChild(txt);
       });
 
-      // bars + x-axis labels
+      // bars + x-axis labels (bars start at iH, will animate up)
+      const rects = [];
       data.forEach((d, i) => {
-        const bH = Math.max((d.value / maxVal) * iH, 2);
+        const fullH = Math.max((d.value / maxVal) * iH, 2);
         const bx = i * slotW + (slotW - barW) / 2;
-        const by = iH - bH;
         const cx = i * slotW + slotW / 2;
 
         const rect = document.createElementNS(NS, 'rect');
-        rect.setAttribute('x', bx); rect.setAttribute('y', by);
-        rect.setAttribute('width', barW); rect.setAttribute('height', bH);
-        rect.setAttribute('rx', 3);
-        rect.setAttribute('fill', `url(#${gid})`);
-        rect.style.transition = 'opacity 0.12s';
+        rect.setAttribute('x', bx);
+        rect.setAttribute('y', iH);        // start collapsed at baseline
+        rect.setAttribute('width', barW);
+        rect.setAttribute('height', 0);    // start at 0
+        rect.setAttribute('rx', 2);
+        rect.setAttribute('fill', barColor);
         rect.style.cursor = 'default';
+        rect.dataset.fullY = iH - fullH;
+        rect.dataset.fullH = fullH;
 
-        rect.addEventListener('mouseenter', e => {
-          rect.style.opacity = '0.65';
+        rect.addEventListener('mouseenter', () => {
+          rect.setAttribute('fill', barColor);
+          rect.style.opacity = '0.6';
           tip.textContent = d.label + ': ' + d.value;
           tip.style.opacity = '1';
         });
@@ -5862,25 +5776,44 @@
           tip.style.opacity = '0';
         });
         g.appendChild(rect);
+        rects.push(rect);
 
         const xl = document.createElementNS(NS, 'text');
         xl.setAttribute('x', cx); xl.setAttribute('y', iH + 10);
         xl.setAttribute('transform', `rotate(-45,${cx},${iH + 10})`);
         xl.setAttribute('text-anchor', 'end');
         xl.setAttribute('font-size', '15');
-        xl.setAttribute('fill', '#555555');
+        xl.setAttribute('fill', '#666');
         xl.setAttribute('font-family', '"Times New Roman",Times,serif');
         xl.textContent = d.label;
         g.appendChild(xl);
       });
 
       host.appendChild(svg);
+
+      // scroll-triggered left-to-right rise animation
+      let animated = false;
+      const io = new IntersectionObserver(entries => {
+        if (!entries[0].isIntersecting || animated) return;
+        animated = true;
+        io.disconnect();
+        rects.forEach((rect, i) => {
+          const fY = parseFloat(rect.dataset.fullY);
+          const fH = parseFloat(rect.dataset.fullH);
+          setTimeout(() => {
+            rect.style.transition = 'y 0.45s cubic-bezier(0.16,1,0.3,1), height 0.45s cubic-bezier(0.16,1,0.3,1)';
+            rect.setAttribute('y', fY);
+            rect.setAttribute('height', fH);
+          }, i * 18);
+        });
+      }, { threshold: 0.15 });
+      io.observe(host);
     }
 
     // defer until layout is complete so getBoundingClientRect() returns real widths
     window.addEventListener('load', function() {
-      makeChart('chart-actions', ACTIONS, '#6ee7b7', '#065f46');  // green
-      makeChart('chart-objects', OBJECTS, '#93c5fd', '#1e3a8a');  // blue
+      makeChart('chart-actions', ACTIONS, '#2d2d2d');   // near-black, clean
+      makeChart('chart-objects', OBJECTS, '#5a7fa8');   // muted steel blue
 
       // Build TOC
       const tocList = document.getElementById('toc-list');
