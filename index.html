@@ -74,7 +74,13 @@
     .small .section-title { margin-bottom: 6px; }
     /* ── TOC ── */
     .page-body { display: flex; align-items: flex-start; gap: 20px; margin-top: 8px; }
-    .toc-sidebar { display: none; }
+    .toc-sidebar {
+      width: 190px; flex-shrink: 0;
+      position: sticky; top: 24px;
+      max-height: calc(100vh - 48px); overflow-y: auto;
+      border-right: 1px solid var(--line);
+      padding-right: 18px;
+    }
     .toc-sidebar::-webkit-scrollbar { width: 4px; }
     .toc-sidebar::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
     .toc-heading { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 10px; }
@@ -166,6 +172,18 @@
       </div>
     </div>
 
+    <!-- ── Charts ── -->
+    <div class="charts-section">
+      <div class="chart-card">
+        <div class="chart-heading">Top Actions</div>
+        <div id="chart-actions" class="chart-host"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-heading">Top Objects</div>
+        <div id="chart-objects" class="chart-host"></div>
+      </div>
+    </div>
+
     <!-- ── Setup ── -->
     <section style="margin: 0 0 28px;">
       <div style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted); margin-bottom:14px;">Setup</div>
@@ -180,18 +198,6 @@
         </figure>
       </div>
     </section>
-
-    <!-- ── Charts ── -->
-    <div class="charts-section">
-      <div class="chart-card">
-        <div class="chart-heading">Top Actions</div>
-        <div id="chart-actions" class="chart-host"></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-heading">Top Objects</div>
-        <div id="chart-objects" class="chart-host"></div>
-      </div>
-    </div>
 
     <div class="page-body">
       <nav class="toc-sidebar" aria-label="Table of contents">
