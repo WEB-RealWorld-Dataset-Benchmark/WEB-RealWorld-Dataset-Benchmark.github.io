@@ -32,13 +32,13 @@
       color: var(--text);
       background: var(--bg);
     }
-    .wrap { max-width: 1560px; margin: 0 auto; padding: 32px 28px 64px; }
-    header { padding: 32px 0 20px; border-bottom: 2px solid var(--deep); margin-bottom: 24px; }
+    .wrap { max-width: min(2100px, 97vw); margin: 0 auto; padding: 32px 28px 64px; }
+    header { padding: 32px 0 20px; border-bottom: 2px solid var(--deep); margin-bottom: 24px; text-align: center; }
     h1 { margin: 0 0 8px; font-size: clamp(30px, 3.2vw, 52px); letter-spacing: -0.02em; color: #111827; font-family: "Times New Roman", Times, serif; }
-    .org-name { font-size: 26px; font-weight: 700; color: #111827; margin: 8px 0 2px; letter-spacing: -0.01em; }
-    .subtitle { max-width: 900px; color: var(--muted); line-height: 1.7; margin: 0; font-size: 16px; }
+    .org-name { font-size: 26px; font-weight: 700; color: #111827; margin: 8px 0 2px; letter-spacing: -0.01em; font-family: "Times New Roman", Times, serif; }
+    .subtitle { color: var(--muted); line-height: 1.7; margin: 0; font-size: 16px; }
     .subtitle .affil { font-size: 12px; vertical-align: super; }
-    .subtitle .core-badge { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; font-weight: 600; color: var(--accent2); background: var(--soft-green); border-radius: 6px; padding: 2px 7px; margin-right: 4px; }
+    .subtitle .core-badge { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600; color: var(--accent2); background: var(--soft-green); border-radius: 6px; padding: 2px 8px; margin-right: 6px; }
     .grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 18px 0 26px; }
     .card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); }
     .task-card { background: var(--bg-section); border: 1px solid var(--line); box-shadow: var(--shadow); }
@@ -74,13 +74,7 @@
     .small .section-title { margin-bottom: 6px; }
     /* ── TOC ── */
     .page-body { display: flex; align-items: flex-start; gap: 20px; margin-top: 8px; }
-    .toc-sidebar {
-      width: 190px; flex-shrink: 0;
-      position: sticky; top: 24px;
-      max-height: calc(100vh - 48px); overflow-y: auto;
-      border-right: 1px solid var(--line);
-      padding-right: 18px;
-    }
+    .toc-sidebar { display: none; }
     .toc-sidebar::-webkit-scrollbar { width: 4px; }
     .toc-sidebar::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
     .toc-heading { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 10px; }
@@ -172,6 +166,21 @@
       </div>
     </div>
 
+    <!-- ── Setup ── -->
+    <section style="margin: 0 0 28px;">
+      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted); margin-bottom:14px;">Setup</div>
+      <div style="display:flex; gap:16px; align-items:flex-start;">
+        <figure style="flex:1; margin:0;">
+          <img src="figures/front_view.png" alt="Robot setup front view" loading="lazy" style="width:100%; border-radius:12px; display:block; border:1px solid var(--line);">
+          <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12px; color:var(--muted); margin-top:6px; text-align:center;">Front view</figcaption>
+        </figure>
+        <figure style="flex:1; margin:0;">
+          <img src="figures/back_view.png" alt="Robot setup back view" loading="lazy" style="width:100%; border-radius:12px; display:block; border:1px solid var(--line);">
+          <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12px; color:var(--muted); margin-top:6px; text-align:center;">Back view</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <!-- ── Charts ── -->
     <div class="charts-section">
       <div class="chart-card">
@@ -220,10 +229,6 @@
               <li>Grab a bracelet and hang it on the hanger.</li>
               <li>Grab a necklace and hang it on the hanger.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 255</span><span class="pill">observation.images.cam_left_wrist: 255</span><span class="pill">observation.images.cam_right_wrist: 255</span></div>
           </div>
           
           <div class="section">
@@ -278,10 +283,6 @@
               <li>Grab the shoe at the center of the table with the appropriate arm and place it at the center of the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 757</span><span class="pill">observation.images.cam_left_wrist: 757</span><span class="pill">observation.images.cam_right_wrist: 757</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -328,10 +329,6 @@
               <li>Identify the clothing type, if it is pants, place it at the right center of the table, if it is a shirt, place it at the left center of the table.</li>
               <li>Pass the article of clothing to the other gripper.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 252</span><span class="pill">observation.images.cam_left_wrist: 252</span><span class="pill">observation.images.cam_right_wrist: 252</span></div>
           </div>
           
           <div class="section">
@@ -384,10 +381,6 @@
               <li>Press down on the flat nose cap to fully seal the cap on the birdie tube.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 354</span><span class="pill">observation.images.cam_left_wrist: 354</span><span class="pill">observation.images.cam_right_wrist: 354</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -439,10 +432,6 @@
               <li>Place the bag back onto the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 463</span><span class="pill">observation.images.cam_left_wrist: 463</span><span class="pill">observation.images.cam_right_wrist: 463</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -490,10 +479,6 @@
               <li>Place the plastic bag onto the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 194</span><span class="pill">observation.images.cam_left_wrist: 194</span><span class="pill">observation.images.cam_right_wrist: 194</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -539,10 +524,6 @@
               <li>Grab a single weight and place it on the right side.</li>
               <li>Grab a single weight and place it on the left side.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 679</span><span class="pill">observation.images.cam_left_wrist: 679</span><span class="pill">observation.images.cam_right_wrist: 679</span></div>
           </div>
           
           <div class="section">
@@ -591,10 +572,6 @@
               <li>Place the bowl back onto the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 3361</span><span class="pill">observation.images.cam_left_wrist: 3361</span><span class="pill">observation.images.cam_right_wrist: 3361</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -639,10 +616,6 @@
             <ol>
               <li>Grab a bracelet and hang it on the hanger.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 277</span><span class="pill">observation.images.cam_left_wrist: 277</span><span class="pill">observation.images.cam_right_wrist: 277</span></div>
           </div>
           
           <div class="section">
@@ -691,10 +664,6 @@
               <li>Grab a straw and place it into the organizer.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 332</span><span class="pill">observation.images.cam_left_wrist: 332</span><span class="pill">observation.images.cam_right_wrist: 332</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -742,10 +711,6 @@
               <li>Stack one lego brick on the stacked lego.</li>
               <li>Move the stacked lego brick to the center of the table.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 1115</span><span class="pill">observation.images.cam_left_wrist: 1115</span><span class="pill">observation.images.cam_right_wrist: 1115</span></div>
           </div>
           
           <div class="section">
@@ -796,10 +761,6 @@
               <li>Grab a chopstick and place it flat on the bowls horizontally.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 744</span><span class="pill">observation.images.cam_left_wrist: 744</span><span class="pill">observation.images.cam_right_wrist: 744</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -848,10 +809,6 @@
               <li>Insert the Double-cable into its socket.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 294</span><span class="pill">observation.images.cam_left_wrist: 294</span><span class="pill">observation.images.cam_right_wrist: 294</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -896,10 +853,6 @@
             <ol>
               <li>Grab a chess piece on the chess board and place it on the table.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 125</span><span class="pill">observation.images.cam_left_wrist: 125</span><span class="pill">observation.images.cam_right_wrist: 125</span></div>
           </div>
           
           <div class="section">
@@ -954,10 +907,6 @@
               <li>Move the clothes rack to the center of the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 448</span><span class="pill">observation.images.cam_left_wrist: 448</span><span class="pill">observation.images.cam_right_wrist: 448</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1006,10 +955,6 @@
               <li>Grab a coffee pod and re-orient its orientation on the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 328</span><span class="pill">observation.images.cam_left_wrist: 328</span><span class="pill">observation.images.cam_right_wrist: 328</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1057,10 +1002,6 @@
               <li>Rotate the coffee pod holder.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 276</span><span class="pill">observation.images.cam_left_wrist: 276</span><span class="pill">observation.images.cam_right_wrist: 276</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1106,10 +1047,6 @@
               <li>Grab the red [lego/pepper/dice/toy/ball/ring] and place it on the red plate.</li>
               <li>Grab the yellow [lego/pepper/dice/toy/ball/ring] and place it on the yellow plate.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 379</span><span class="pill">observation.images.cam_left_wrist: 379</span><span class="pill">observation.images.cam_right_wrist: 379</span></div>
           </div>
           
           <div class="section">
@@ -1161,10 +1098,6 @@
               <li>Connect the red connector with the red plus-shaped pipe segment to form a cross shape.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 605</span><span class="pill">observation.images.cam_left_wrist: 605</span><span class="pill">observation.images.cam_right_wrist: 605</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1210,10 +1143,6 @@
               <li>Move the cooking utensils cup to the center of the table.</li>
               <li>Grab the [whisk/spatula/slotted spoon/spoon] and place it into the cooking utensils cup.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 508</span><span class="pill">observation.images.cam_left_wrist: 508</span><span class="pill">observation.images.cam_right_wrist: 508</span></div>
           </div>
           
           <div class="section">
@@ -1265,10 +1194,6 @@
               <li>Place the number 2 candle into the center slot of the cake.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 513</span><span class="pill">observation.images.cam_left_wrist: 513</span><span class="pill">observation.images.cam_right_wrist: 513</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1313,10 +1238,6 @@
             <ol>
               <li>Grad [eraser/marker/pen/book/marker holder/small clip] and place it into the [bottom/middle/top] layer of the desk rack organizer.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 334</span><span class="pill">observation.images.cam_left_wrist: 334</span><span class="pill">observation.images.cam_right_wrist: 334</span></div>
           </div>
           
           <div class="section">
@@ -1365,10 +1286,6 @@
               <li>Place the rolled dice to the opposite side of its initial position.</li>
               <li>Grab the dice and roll it again if the previous dice roll did not land fully flat on a dice face.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 366</span><span class="pill">observation.images.cam_left_wrist: 366</span><span class="pill">observation.images.cam_right_wrist: 366</span></div>
           </div>
           
           <div class="section">
@@ -1419,10 +1336,6 @@
               <li>Grab a [blue/pink] small bowl and place it in the [blue/pink] large bowl.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 478</span><span class="pill">observation.images.cam_left_wrist: 478</span><span class="pill">observation.images.cam_right_wrist: 478</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1472,10 +1385,6 @@
               <li>Grab a dried asparagus stalk and place it onto the plate.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 651</span><span class="pill">observation.images.cam_left_wrist: 651</span><span class="pill">observation.images.cam_right_wrist: 651</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1522,10 +1431,6 @@
               <li>Grab a coin and pass it off to the other hand so that the gripper holds the coin by the face.</li>
               <li>Place the coin into the piggy bank.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 336</span><span class="pill">observation.images.cam_left_wrist: 336</span><span class="pill">observation.images.cam_right_wrist: 336</span></div>
           </div>
           
           <div class="section">
@@ -1578,10 +1483,6 @@
               <li>Grab the folded bag from the right and place it on top of the bag in the center of the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 192</span><span class="pill">observation.images.cam_left_wrist: 192</span><span class="pill">observation.images.cam_right_wrist: 192</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1627,10 +1528,6 @@
               <li>Move the hanger to the center of the table.</li>
               <li>Grab the [gray/black/red] baseball hat and hang it on the hanger.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 773</span><span class="pill">observation.images.cam_left_wrist: 773</span><span class="pill">observation.images.cam_right_wrist: 773</span></div>
           </div>
           
           <div class="section">
@@ -1684,10 +1581,6 @@
               <li>Align the base to the center of the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 537</span><span class="pill">observation.images.cam_left_wrist: 537</span><span class="pill">observation.images.cam_right_wrist: 537</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1733,10 +1626,6 @@
               <li>Pick up a screw and place it onto the screw plate.</li>
               <li>Pick up a fastening nut and place it on the nut plate.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 285</span><span class="pill">observation.images.cam_left_wrist: 285</span><span class="pill">observation.images.cam_right_wrist: 285</span></div>
           </div>
           
           <div class="section">
@@ -1784,10 +1673,6 @@
               <li>Grab the AA battery and place it into the computer mouse, making sure the polarity is correct.</li>
               <li>Push the battery all the way into the battery slot.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 831</span><span class="pill">observation.images.cam_left_wrist: 831</span><span class="pill">observation.images.cam_right_wrist: 831</span></div>
           </div>
           
           <div class="section">
@@ -1837,10 +1722,6 @@
               <li>Grab a jenga block and move it closer to you.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 676</span><span class="pill">observation.images.cam_left_wrist: 676</span><span class="pill">observation.images.cam_right_wrist: 676</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1885,10 +1766,6 @@
             <ol>
               <li>Grab a ring and place it on the base platform of the hanger.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 883</span><span class="pill">observation.images.cam_left_wrist: 883</span><span class="pill">observation.images.cam_right_wrist: 883</span></div>
           </div>
           
           <div class="section">
@@ -1937,10 +1814,6 @@
               <li>Grab the pot with both arms and place it on the rack.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 1642</span><span class="pill">observation.images.cam_left_wrist: 1642</span><span class="pill">observation.images.cam_right_wrist: 1642</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -1988,10 +1861,6 @@
               <li>Drag the plate to the center of the table.</li>
               <li>Pick up a bowl and place it into the bowl section of the dish rack.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 398</span><span class="pill">observation.images.cam_left_wrist: 398</span><span class="pill">observation.images.cam_right_wrist: 398</span></div>
           </div>
           
           <div class="section">
@@ -2057,10 +1926,6 @@
               <li>Grab the green square magnetic pieces to the proper position reference the given model structure.</li>
               <li>Grab the blue square magnetic pieces to the proper position reference the given model structure.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 674</span><span class="pill">observation.images.cam_left_wrist: 674</span><span class="pill">observation.images.cam_right_wrist: 674</span></div>
           </div>
           
           <div class="section">
@@ -2133,10 +1998,6 @@
               <li>Pick the divider inside the toolbox and place on the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 272</span><span class="pill">observation.images.cam_left_wrist: 272</span><span class="pill">observation.images.cam_right_wrist: 272</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -2189,10 +2050,6 @@
               <li>Grab a non-orange ball wrongly placed in the orange container and place it back into the box of balls.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 467</span><span class="pill">observation.images.cam_left_wrist: 467</span><span class="pill">observation.images.cam_right_wrist: 467</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -2243,10 +2100,6 @@
               <li>Grab [red/yellow/purple] number [1/2/3/4/5/6] dice and place it into its correct position based off ascending order from left to right.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 650</span><span class="pill">observation.images.cam_left_wrist: 650</span><span class="pill">observation.images.cam_right_wrist: 650</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -2293,10 +2146,6 @@
               <li>Grab a desk rack level and stack it onto the existing desk rack assembly.</li>
               <li>Place a book on the top level of the desk rack.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 566</span><span class="pill">observation.images.cam_left_wrist: 566</span><span class="pill">observation.images.cam_right_wrist: 566</span></div>
           </div>
           
           <div class="section">
@@ -2348,10 +2197,6 @@
               <li>Place the key back down on the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 638</span><span class="pill">observation.images.cam_left_wrist: 638</span><span class="pill">observation.images.cam_right_wrist: 638</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -2402,10 +2247,6 @@
               <li>Take out an item from the box and place it on the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 591</span><span class="pill">observation.images.cam_left_wrist: 591</span><span class="pill">observation.images.cam_right_wrist: 591</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -2453,10 +2294,6 @@
               <li>Grab a binder clip and place it in the office supply organizer.</li>
               <li>Move the office supply organizer to the center of the table.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 1338</span><span class="pill">observation.images.cam_left_wrist: 1338</span><span class="pill">observation.images.cam_right_wrist: 1338</span></div>
           </div>
           
           <div class="section">
@@ -2507,10 +2344,6 @@
               <li>Grab the bento box lid and place it onto the bento box.</li>
               <li>Press down on the lid to seal it onto the bento box.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 1052</span><span class="pill">observation.images.cam_left_wrist: 1052</span><span class="pill">observation.images.cam_right_wrist: 1052</span></div>
           </div>
           
           <div class="section">
@@ -2565,10 +2398,6 @@
               <li>Re-align the sealed lunch box.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 347</span><span class="pill">observation.images.cam_left_wrist: 347</span><span class="pill">observation.images.cam_right_wrist: 347</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -2616,10 +2445,6 @@
               <li>Grab the bag on both sides and lift it up a little to let the items settle to the bottom of the bag.</li>
               <li>Place the bag back onto the table.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 482</span><span class="pill">observation.images.cam_left_wrist: 482</span><span class="pill">observation.images.cam_right_wrist: 482</span></div>
           </div>
           
           <div class="section">
@@ -2671,10 +2496,6 @@
               <li>Adjust the bag to a proper position.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 286</span><span class="pill">observation.images.cam_left_wrist: 286</span><span class="pill">observation.images.cam_right_wrist: 286</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -2721,10 +2542,6 @@
               <li>Use left arm to pick up a ping pong ball and drop the ball onto the paddle to bounce it into the basket.</li>
               <li>Put down the ping pong ball onto the table.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 1360</span><span class="pill">observation.images.cam_left_wrist: 1360</span><span class="pill">observation.images.cam_right_wrist: 1360</span></div>
           </div>
           
           <div class="section">
@@ -2774,10 +2591,6 @@
               <li>Place the paper towel on the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 652</span><span class="pill">observation.images.cam_left_wrist: 652</span><span class="pill">observation.images.cam_right_wrist: 652</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -2822,10 +2635,6 @@
             <ol>
               <li>Grab a book by the thin side with another arm holding, and place it on the shelf.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 450</span><span class="pill">observation.images.cam_left_wrist: 450</span><span class="pill">observation.images.cam_right_wrist: 450</span></div>
           </div>
           
           <div class="section">
@@ -2879,10 +2688,6 @@
               <li>Pour some instant coffee into the cup.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 416</span><span class="pill">observation.images.cam_left_wrist: 416</span><span class="pill">observation.images.cam_right_wrist: 416</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -2935,10 +2740,6 @@
               <li>Adjust the position of the shoebox to avoid interfering with the operation.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 402</span><span class="pill">observation.images.cam_left_wrist: 402</span><span class="pill">observation.images.cam_right_wrist: 402</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -2987,10 +2788,6 @@
               <li>Pick up the fried egg and place it on the sandwich.</li>
               <li>Pick up a slice of bread and place it on the sandwich to complete it.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 619</span><span class="pill">observation.images.cam_left_wrist: 619</span><span class="pill">observation.images.cam_right_wrist: 619</span></div>
           </div>
           
           <div class="section">
@@ -3051,10 +2848,6 @@
               <li>Pick up the button labeled number 5 and place it to the right of the button labeled number 4.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 467</span><span class="pill">observation.images.cam_left_wrist: 467</span><span class="pill">observation.images.cam_right_wrist: 467</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -3103,10 +2896,6 @@
               <li>Adjust the plastic bag’s handles so that the contents are fully exposed.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 340</span><span class="pill">observation.images.cam_left_wrist: 340</span><span class="pill">observation.images.cam_right_wrist: 340</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -3151,10 +2940,6 @@
             <ol>
               <li>Grab a necklace and hang it on the hanger.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 534</span><span class="pill">observation.images.cam_left_wrist: 534</span><span class="pill">observation.images.cam_right_wrist: 534</span></div>
           </div>
           
           <div class="section">
@@ -3207,10 +2992,6 @@
               <li>Close the lid of the shoe box.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 425</span><span class="pill">observation.images.cam_left_wrist: 425</span><span class="pill">observation.images.cam_right_wrist: 425</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -3261,10 +3042,6 @@
               <li>Place the back on the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 808</span><span class="pill">observation.images.cam_left_wrist: 808</span><span class="pill">observation.images.cam_right_wrist: 808</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -3312,10 +3089,6 @@
               <li>Pour the coffee beans in the cup into the bowl.</li>
               <li>Place the cup back onto the table.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 856</span><span class="pill">observation.images.cam_left_wrist: 856</span><span class="pill">observation.images.cam_right_wrist: 856</span></div>
           </div>
           
           <div class="section">
@@ -3369,10 +3142,6 @@
               <li>Twist the right arm clockwise while the left-arm holds the bottle to tighten the water bottle cap.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 379</span><span class="pill">observation.images.cam_left_wrist: 379</span><span class="pill">observation.images.cam_right_wrist: 379</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -3420,10 +3189,6 @@
               <li>Grab a golf ball and place it on the corresponding sports equipment (left) plate.</li>
               <li>Grab a ping-pong paddle and place it on the corresponding sports equipment (right) plate.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 445</span><span class="pill">observation.images.cam_left_wrist: 445</span><span class="pill">observation.images.cam_right_wrist: 445</span></div>
           </div>
           
           <div class="section">
@@ -3481,10 +3246,6 @@
               <li>Grab a black pawn and place it at the proper position on the black side according to international chess rules.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 88</span><span class="pill">observation.images.cam_left_wrist: 88</span><span class="pill">observation.images.cam_right_wrist: 88</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -3539,10 +3300,6 @@
               <li>If pieces are already randomly placed on board in incorrect positions, grab a white/brown background piece and place on left side of board in correct position.</li>
               <li>If pieces are already randomly placed on board in incorrect positions, grab a white/brown background piece and place on right side of board in correct position.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 230</span><span class="pill">observation.images.cam_left_wrist: 230</span><span class="pill">observation.images.cam_right_wrist: 230</span></div>
           </div>
           
           <div class="section">
@@ -3645,10 +3402,6 @@
               <li>Place the rectangle in the rectangle slot.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 158</span><span class="pill">observation.images.cam_left_wrist: 158</span><span class="pill">observation.images.cam_right_wrist: 158</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -3694,10 +3447,6 @@
               <li>Move the shopping basket to the center of the table.</li>
               <li>Grab an item and place it into the shopping basket.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 638</span><span class="pill">observation.images.cam_left_wrist: 638</span><span class="pill">observation.images.cam_right_wrist: 638</span></div>
           </div>
           
           <div class="section">
@@ -3755,10 +3504,6 @@
               <li>Grab the red right wing piece and place it on the right side of the puzzle board.</li>
               <li>Grab the blue body piece and place it on the bottom of the puzzle board.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 476</span><span class="pill">observation.images.cam_left_wrist: 476</span><span class="pill">observation.images.cam_right_wrist: 476</span></div>
           </div>
           
           <div class="section">
@@ -3818,10 +3563,6 @@
               <li>Grab the toe side of the sock and fold it over to fold the socks in half.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 416</span><span class="pill">observation.images.cam_left_wrist: 416</span><span class="pill">observation.images.cam_right_wrist: 416</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -3874,10 +3615,6 @@
               <li>Pick up a banana and place it in the &quot;FRUIT&quot; basket.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 334</span><span class="pill">observation.images.cam_left_wrist: 334</span><span class="pill">observation.images.cam_right_wrist: 334</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -3925,10 +3662,6 @@
               <li>Pick up one fork and place it in the middle slot of the organizer.</li>
               <li>Pick up one knife and place it in the right slot of the organizer.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 373</span><span class="pill">observation.images.cam_left_wrist: 373</span><span class="pill">observation.images.cam_right_wrist: 373</span></div>
           </div>
           
           <div class="section">
@@ -3978,10 +3711,6 @@
               <li>Grab a blue lego brick with the closest arm and place it into the blue pile of lego bricks.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 281</span><span class="pill">observation.images.cam_left_wrist: 281</span><span class="pill">observation.images.cam_right_wrist: 281</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4028,10 +3757,6 @@
               <li>Grab a [green / white / black / red] [sedan / pickup truck] and place it at the center of the table.</li>
               <li>Grab a [green / white / black / red] [sedan / pickup truck] from the center of the table and place it into the corresponding group of similar vehicle types (lined up in a horizontal line).</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 350</span><span class="pill">observation.images.cam_left_wrist: 350</span><span class="pill">observation.images.cam_right_wrist: 350</span></div>
           </div>
           
           <div class="section">
@@ -4081,10 +3806,6 @@
               <li>Grab a white rectangular prism and stack it on the green rectangular prism horizontally.</li>
               <li>Grab a green triangular prism and stack it on the white rectangular prism to complete the tower.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 567</span><span class="pill">observation.images.cam_left_wrist: 567</span><span class="pill">observation.images.cam_right_wrist: 567</span></div>
           </div>
           
           <div class="section">
@@ -4137,10 +3858,6 @@
               <li>Pick up a cup and place it at the top of the tower.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 640</span><span class="pill">observation.images.cam_left_wrist: 640</span><span class="pill">observation.images.cam_right_wrist: 640</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4190,10 +3907,6 @@
               <li>Grab a [green/blue/pink] small bowl and add it to the stack of plates and bowls.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 432</span><span class="pill">observation.images.cam_left_wrist: 432</span><span class="pill">observation.images.cam_right_wrist: 432</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4240,10 +3953,6 @@
               <li>Grab a tennis ball and place it into the tennis ball tube.</li>
               <li>Pick up the full tennis ball tube and move it to the back center of the table.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 774</span><span class="pill">observation.images.cam_left_wrist: 774</span><span class="pill">observation.images.cam_right_wrist: 774</span></div>
           </div>
           
           <div class="section">
@@ -4295,10 +4004,6 @@
               <li>Place the empty tennis ball tube to the left of the table vertically standing up.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 400</span><span class="pill">observation.images.cam_left_wrist: 400</span><span class="pill">observation.images.cam_right_wrist: 400</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4348,10 +4053,6 @@
               <li>Grab the tape measure, and place it into the tool box.</li>
               <li>Grab the screwdriver, and place it into the tool box.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 681</span><span class="pill">observation.images.cam_left_wrist: 681</span><span class="pill">observation.images.cam_right_wrist: 681</span></div>
           </div>
           
           <div class="section">
@@ -4404,10 +4105,6 @@
               <li>Grab the folded towel on the right and stack it on the folded towel in the center of the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 589</span><span class="pill">observation.images.cam_left_wrist: 589</span><span class="pill">observation.images.cam_right_wrist: 589</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4455,10 +4152,6 @@
               <li>Grab the large red ring and place it on the center peg.</li>
               <li>Grab the small red ring and place it on top of the large red ring on the center peg.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 1004</span><span class="pill">observation.images.cam_left_wrist: 1004</span><span class="pill">observation.images.cam_right_wrist: 1004</span></div>
           </div>
           
           <div class="section">
@@ -4508,10 +4201,6 @@
               <li>Take the loose screw with the right arm and place it onto the table.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 418</span><span class="pill">observation.images.cam_left_wrist: 418</span><span class="pill">observation.images.cam_right_wrist: 418</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4558,10 +4247,6 @@
               <li>Grab a plate and place it on the tray.</li>
               <li>Move the tray to the center of the table.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 1492</span><span class="pill">observation.images.cam_left_wrist: 1492</span><span class="pill">observation.images.cam_right_wrist: 1492</span></div>
           </div>
           
           <div class="section">
@@ -4610,10 +4295,6 @@
               <li>Grab an item from the large container and place it into the smaller container.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 329</span><span class="pill">observation.images.cam_left_wrist: 329</span><span class="pill">observation.images.cam_right_wrist: 329</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4660,10 +4341,6 @@
               <li>Grab a [plastic cup/towel/lego/napkin] from the table and place it into the recycling bin.</li>
               <li>Grab a [] and place it at the center of the table.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 468</span><span class="pill">observation.images.cam_left_wrist: 468</span><span class="pill">observation.images.cam_right_wrist: 468</span></div>
           </div>
           
           <div class="section">
@@ -4713,10 +4390,6 @@
               <li>Adjust the bowl to properly stack it.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 432</span><span class="pill">observation.images.cam_left_wrist: 432</span><span class="pill">observation.images.cam_right_wrist: 432</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4765,10 +4438,6 @@
               <li>Untie the final knot.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 236</span><span class="pill">observation.images.cam_left_wrist: 236</span><span class="pill">observation.images.cam_right_wrist: 236</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4814,10 +4483,6 @@
               <li>Unplug Tri-cable from the socket.</li>
               <li>Place Tri-cable into basket.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 323</span><span class="pill">observation.images.cam_left_wrist: 323</span><span class="pill">observation.images.cam_right_wrist: 323</span></div>
           </div>
           
           <div class="section">
@@ -4869,10 +4534,6 @@
               <li>With one arm, grab a USB-C cable and plug it into the charging block while holding the block with the other arm.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 299</span><span class="pill">observation.images.cam_left_wrist: 299</span><span class="pill">observation.images.cam_right_wrist: 299</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4923,10 +4584,6 @@
               <li>Turn off the vacuum by pressing the power button until the lights turn off.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 770</span><span class="pill">observation.images.cam_left_wrist: 770</span><span class="pill">observation.images.cam_right_wrist: 770</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -4976,10 +4633,6 @@
               <li>Grab the eraser from the center of the table and place it in the organizer.</li>
             </ol>
           </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 429</span><span class="pill">observation.images.cam_left_wrist: 429</span><span class="pill">observation.images.cam_right_wrist: 429</span></div>
-          </div>
           
           <div class="section">
             <div class="section-title">Sample videos</div>
@@ -5027,10 +4680,6 @@
               <li>Fold the towel corners over the toy.</li>
               <li>Pick up the folded towel and drop it into the basket.</li>
             </ol>
-          </div>
-          <div class="section">
-            <div class="section-title">Videos by camera</div>
-            <div class="pill-row"><span class="pill">observation.images.cam_high: 482</span><span class="pill">observation.images.cam_left_wrist: 482</span><span class="pill">observation.images.cam_right_wrist: 482</span></div>
           </div>
           
           <div class="section">
