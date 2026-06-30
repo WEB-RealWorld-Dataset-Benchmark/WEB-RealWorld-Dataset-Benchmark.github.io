@@ -7,15 +7,15 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #F3E9F4;
-      --bg2: #FBF0F4;
-      --card: rgba(255,255,255,0.90);
-      --text: #2A1428;
-      --muted: #7B5A80;
-      --line: rgba(88,33,90,0.14);
-      --accent: #58215A;
-      --accent2: #A8536E;
-      --shadow: 0 18px 60px rgba(88, 33, 90, 0.13);
+      --bg: #f3faf8;
+      --bg2: #edf4fb;
+      --card: rgba(255,255,255,0.96);
+      --text: #0c1f1b;
+      --muted: #467a70;
+      --line: rgba(14,100,82,0.13);
+      --accent: #0d7c68;
+      --accent2: #1a6eb0;
+      --shadow: 0 18px 60px rgba(14, 100, 82, 0.11);
     }
     * { box-sizing: border-box; }
     body {
@@ -23,13 +23,13 @@
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(181,141,182,0.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(168,83,110,0.13), transparent 32%),
+        radial-gradient(circle at top left, rgba(14,180,140,0.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(26,110,176,0.11), transparent 32%),
         linear-gradient(180deg, var(--bg), var(--bg2));
     }
     .wrap { max-width: 1320px; margin: 0 auto; padding: 32px 20px 64px; }
     header {
-      background: linear-gradient(135deg, rgba(88,33,90,0.96), rgba(62,40,94,0.98));
+      background: linear-gradient(135deg, rgba(13,100,85,0.97), rgba(22,68,138,0.97));
       color: white;
       border-radius: 28px;
       padding: 30px 28px;
@@ -97,7 +97,7 @@
     .chart-heading { font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 14px; }
     .chart-host { width: 100%; overflow-x: auto; }
     .chart-host svg { display: block; }
-    .chart-tooltip { position: fixed; background: #2A1428; color: #fff; padding: 6px 12px; border-radius: 10px; font-size: 13px; font-weight: 600; pointer-events: none; opacity: 0; transition: opacity 0.12s; z-index: 9999; white-space: nowrap; }
+    .chart-tooltip { position: fixed; background: #0c1f1b; color: #fff; padding: 6px 12px; border-radius: 10px; font-size: 13px; font-weight: 600; pointer-events: none; opacity: 0; transition: opacity 0.12s; z-index: 9999; white-space: nowrap; }
     @media (max-width: 1100px) {
       .grid, .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .video-grid { grid-template-columns: 1fr; }
@@ -124,9 +124,9 @@
       .prompt-edit .prompt-save {
         font: inherit; font-size: 0.85rem; cursor: pointer;
         padding: 6px 14px; border: 0; border-radius: 8px;
-        background: #2563eb; color: #fff;
+        background: #1a6eb0; color: #fff;
       }
-      .prompt-edit .prompt-save:hover { background: #1d4ed8; }
+      .prompt-edit .prompt-save:hover { background: #155a92; }
       .prompt-edit .prompt-save:disabled { opacity: 0.5; cursor: default; }
       .prompt-edit .prompt-save.dirty { background: #d97706; }
       .prompt-edit .prompt-status { font-size: 0.85rem; }
@@ -5769,121 +5769,116 @@
     const ACTIONS = [{"label":"sort","value":11},{"label":"organize","value":10},{"label":"stack","value":6},{"label":"pack","value":5},{"label":"set","value":5},{"label":"return","value":4},{"label":"hang","value":3},{"label":"arrange","value":3},{"label":"put","value":3},{"label":"bag","value":3},{"label":"remove","value":3},{"label":"roll","value":3},{"label":"fold","value":3},{"label":"open","value":3},{"label":"stand","value":2},{"label":"pour","value":2},{"label":"plug","value":2},{"label":"insert","value":2},{"label":"solve","value":2},{"label":"load","value":2},{"label":"prepare","value":2},{"label":"clean","value":2},{"label":"transfer","value":2},{"label":"close","value":1},{"label":"clear","value":1},{"label":"connect","value":1},{"label":"dry","value":1},{"label":"lift","value":1},{"label":"rotate","value":1},{"label":"move","value":1},{"label":"bounce","value":1},{"label":"place","value":1},{"label":"push","value":1},{"label":"seal","value":1},{"label":"collect","value":1},{"label":"assemble","value":1},{"label":"unload","value":1},{"label":"untie","value":1},{"label":"unplug","value":1},{"label":"wrap","value":1}];
     const OBJECTS = [{"label":"rack","value":7},{"label":"storage","value":5},{"label":"plates","value":5},{"label":"jewelry","value":4},{"label":"shoes","value":4},{"label":"board","value":4},{"label":"pairs","value":3},{"label":"dishes","value":3},{"label":"coffee","value":3},{"label":"dice","value":3},{"label":"plate","value":3},{"label":"tower","value":3},{"label":"puzzle","value":3},{"label":"balls","value":3},{"label":"containers","value":3},{"label":"clothes","value":2},{"label":"ball","value":2},{"label":"shopping","value":2},{"label":"bags","value":2},{"label":"objects","value":2},{"label":"contents","value":2},{"label":"supplies","value":2},{"label":"extension","value":2},{"label":"pods","value":2},{"label":"carousel","value":2},{"label":"utensils","value":2},{"label":"container","value":2},{"label":"desk","value":2},{"label":"bowls","value":2},{"label":"paper","value":2},{"label":"towel","value":2},{"label":"hanoi","value":2},{"label":"rings","value":2},{"label":"labelled","value":2},{"label":"dishwasher","value":2},{"label":"match","value":2},{"label":"office","value":2},{"label":"food","value":2},{"label":"sports","value":2},{"label":"equipment","value":2},{"label":"game","value":2},{"label":"tennis","value":2},{"label":"tray","value":2},{"label":"trash","value":2},{"label":"cables","value":2},{"label":"accessory","value":1},{"label":"baby","value":1},{"label":"piles","value":1},{"label":"badminton","value":1},{"label":"basket","value":1}];
 
-    // shared tooltip
     const tip = document.createElement('div');
     tip.className = 'chart-tooltip';
     document.body.appendChild(tip);
 
-    function makeChart(hostId, data, gradTop, gradBot, hoverFill) {
+    function makeChart(hostId, data, gradTop, gradBot) {
       const host = document.getElementById(hostId);
-      const W = Math.max(host.clientWidth || 1100, 700);
-      const mT = 14, mR = 20, mB = 128, mL = 52;
+      const W = Math.max(host.getBoundingClientRect().width || host.parentElement.getBoundingClientRect().width || 900, 600);
+      const mT = 16, mR = 24, mB = 132, mL = 44;
       const iW = W - mL - mR;
-      const iH = 260;
+      const iH = 240;
       const H = iH + mT + mB;
       const n = data.length;
       const maxVal = data[0].value;
       const slotW = iW / n;
-      const barW = Math.max(slotW * 0.72, 5);
+      const barW = Math.max(slotW * 0.70, 4);
+      const NS = 'http://www.w3.org/2000/svg';
 
-      const svgNS = 'http://www.w3.org/2000/svg';
-      const svg = document.createElementNS(svgNS, 'svg');
-      svg.setAttribute('width', W); svg.setAttribute('height', H);
+      const svg = document.createElementNS(NS, 'svg');
+      svg.setAttribute('width', '100%');
+      svg.setAttribute('height', H);
       svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+      svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
 
-      // gradient def
-      const defs = document.createElementNS(svgNS, 'defs');
-      const grad = document.createElementNS(svgNS, 'linearGradient');
-      const gid = 'g-' + hostId;
+      const defs = document.createElementNS(NS, 'defs');
+      const gid = 'grad-' + hostId;
+      const grad = document.createElementNS(NS, 'linearGradient');
       grad.setAttribute('id', gid);
       grad.setAttribute('x1','0'); grad.setAttribute('y1','0');
       grad.setAttribute('x2','0'); grad.setAttribute('y2','1');
-      const s1 = document.createElementNS(svgNS, 'stop');
-      s1.setAttribute('offset','0%'); s1.setAttribute('stop-color', gradTop);
-      const s2 = document.createElementNS(svgNS, 'stop');
-      s2.setAttribute('offset','100%'); s2.setAttribute('stop-color', gradBot);
-      grad.appendChild(s1); grad.appendChild(s2);
-      defs.appendChild(grad); svg.appendChild(defs);
+      [[0, gradTop],[100, gradBot]].forEach(([pct, col]) => {
+        const s = document.createElementNS(NS, 'stop');
+        s.setAttribute('offset', pct + '%');
+        s.setAttribute('stop-color', col);
+        grad.appendChild(s);
+      });
+      defs.appendChild(grad);
+      svg.appendChild(defs);
 
-      const g = document.createElementNS(svgNS, 'g');
+      const g = document.createElementNS(NS, 'g');
       g.setAttribute('transform', `translate(${mL},${mT})`);
       svg.appendChild(g);
 
-      // y-axis gridlines + labels
-      const yTicks = [0, 0.25, 0.5, 0.75, 1.0];
-      yTicks.forEach(t => {
+      // gridlines + y-axis labels
+      [0, 0.25, 0.5, 0.75, 1].forEach(t => {
         const y = iH * (1 - t);
-        const val = Math.round(maxVal * t);
-        const gl = document.createElementNS(svgNS, 'line');
-        gl.setAttribute('x1', 0); gl.setAttribute('x2', iW);
-        gl.setAttribute('y1', y); gl.setAttribute('y2', y);
-        gl.setAttribute('stroke', 'rgba(88,33,90,0.12)');
-        if (t > 0) gl.setAttribute('stroke-dasharray', '5,4');
-        g.appendChild(gl);
-        const lbl = document.createElementNS(svgNS, 'text');
-        lbl.setAttribute('x', -8); lbl.setAttribute('y', y + 4);
-        lbl.setAttribute('text-anchor', 'end');
-        lbl.setAttribute('font-size', '11');
-        lbl.setAttribute('fill', '#7B5A80');
-        lbl.setAttribute('font-family', 'ui-sans-serif,system-ui,sans-serif');
-        lbl.textContent = val;
-        g.appendChild(lbl);
+        const line = document.createElementNS(NS, 'line');
+        line.setAttribute('x1', 0); line.setAttribute('x2', iW);
+        line.setAttribute('y1', y); line.setAttribute('y2', y);
+        line.setAttribute('stroke', 'rgba(14,100,82,0.13)');
+        if (t > 0) line.setAttribute('stroke-dasharray', '5,4');
+        g.appendChild(line);
+        const txt = document.createElementNS(NS, 'text');
+        txt.setAttribute('x', -6); txt.setAttribute('y', y + 4);
+        txt.setAttribute('text-anchor', 'end');
+        txt.setAttribute('font-size', '11');
+        txt.setAttribute('fill', '#467a70');
+        txt.setAttribute('font-family', 'ui-sans-serif,system-ui,sans-serif');
+        txt.textContent = Math.round(maxVal * t);
+        g.appendChild(txt);
       });
 
-      // bars + x labels
+      // bars + x-axis labels
       data.forEach((d, i) => {
         const bH = Math.max((d.value / maxVal) * iH, 2);
-        const x = i * slotW + (slotW - barW) / 2;
-        const y = iH - bH;
+        const bx = i * slotW + (slotW - barW) / 2;
+        const by = iH - bH;
         const cx = i * slotW + slotW / 2;
 
-        const barG = document.createElementNS(svgNS, 'g');
-        barG.style.cursor = 'default';
-
-        const rect = document.createElementNS(svgNS, 'rect');
-        rect.setAttribute('x', x); rect.setAttribute('y', y);
+        const rect = document.createElementNS(NS, 'rect');
+        rect.setAttribute('x', bx); rect.setAttribute('y', by);
         rect.setAttribute('width', barW); rect.setAttribute('height', bH);
-        rect.setAttribute('rx', 4);
+        rect.setAttribute('rx', 3);
         rect.setAttribute('fill', `url(#${gid})`);
-        rect.style.transition = 'opacity 0.15s';
-        barG.appendChild(rect);
+        rect.style.transition = 'opacity 0.12s';
+        rect.style.cursor = 'default';
 
-        barG.addEventListener('mouseenter', e => {
-          rect.style.opacity = '0.75';
+        rect.addEventListener('mouseenter', e => {
+          rect.style.opacity = '0.65';
           tip.textContent = d.label + ': ' + d.value;
           tip.style.opacity = '1';
         });
-        barG.addEventListener('mousemove', e => {
+        rect.addEventListener('mousemove', e => {
           tip.style.left = (e.clientX + 14) + 'px';
-          tip.style.top  = (e.clientY - 36) + 'px';
+          tip.style.top  = (e.clientY - 38) + 'px';
         });
-        barG.addEventListener('mouseleave', () => {
+        rect.addEventListener('mouseleave', () => {
           rect.style.opacity = '1';
           tip.style.opacity = '0';
         });
+        g.appendChild(rect);
 
-        // x-axis label (rotated -45°)
-        const xl = document.createElementNS(svgNS, 'text');
-        xl.setAttribute('x', cx);
-        xl.setAttribute('y', iH + 10);
+        const xl = document.createElementNS(NS, 'text');
+        xl.setAttribute('x', cx); xl.setAttribute('y', iH + 10);
         xl.setAttribute('transform', `rotate(-45,${cx},${iH + 10})`);
         xl.setAttribute('text-anchor', 'end');
         xl.setAttribute('font-size', '11');
-        xl.setAttribute('fill', '#7B5A80');
+        xl.setAttribute('fill', '#467a70');
         xl.setAttribute('font-family', 'ui-sans-serif,system-ui,sans-serif');
         xl.textContent = d.label;
-
-        g.appendChild(barG);
         g.appendChild(xl);
       });
 
       host.appendChild(svg);
     }
 
-    // actions: purple gradient
-    makeChart('chart-actions', ACTIONS, '#E8B3C4', '#58215A', '#793D7B');
-    // objects: rose/mauve gradient
-    makeChart('chart-objects', OBJECTS, '#D0ADA7', '#5D2E46', '#A8536E');
+    // defer until layout is complete so getBoundingClientRect() returns real widths
+    window.addEventListener('load', function() {
+      makeChart('chart-actions', ACTIONS, '#6ee7b7', '#065f46');  // green
+      makeChart('chart-objects', OBJECTS, '#93c5fd', '#1e3a8a');  // blue
+    });
   })();
   </script>
   </body>
