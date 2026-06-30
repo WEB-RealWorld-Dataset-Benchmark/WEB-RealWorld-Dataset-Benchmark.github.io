@@ -93,18 +93,18 @@
     /* ── TOC ── */
     .page-body { display: flex; align-items: flex-start; gap: 20px; margin-top: 8px; }
     .toc-sidebar {
-      width: 270px; flex-shrink: 0;
+      width: 200px; flex-shrink: 0;
       position: sticky; top: 24px;
       max-height: calc(100vh - 48px); overflow-y: auto;
       border-right: 1px solid var(--line);
-      padding-right: 18px;
+      padding-right: 14px;
     }
     .toc-sidebar::-webkit-scrollbar { width: 4px; }
     .toc-sidebar::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
     .toc-heading { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 10px; }
     .toc-list { list-style: none; margin: 0; padding: 0; }
     .toc-list li { margin: 0; }
-    .toc-list a { display: block; padding: 4px 0; font-size: 14px; color: var(--muted); text-decoration: none; line-height: 1.4; border-radius: 3px; transition: color 0.12s; }
+    .toc-list a { display: block; padding: 4px 0; font-size: 13px; color: #b0b8c1; text-decoration: none; line-height: 1.4; border-radius: 3px; transition: color 0.12s; }
     .toc-list a:hover { color: var(--deep); }
     .toc-list a.active { color: var(--accent); font-weight: 600; }
     .main-column { flex: 1; min-width: 0; }
@@ -215,16 +215,9 @@
     <!-- ── Setup ── -->
     <section id="setup-section" style="margin: 0 0 32px;">
       <h2 class="sec-heading">Setup</h2>
-      <div style="display:flex; gap:16px; align-items:stretch;">
-        <figure style="flex:0 0 50%; margin:0; max-width:50%;">
-          <img src="figures/front_view.png" alt="Robot setup front view" loading="lazy" style="width:100%; height:100%; object-fit:cover; border-radius:12px; display:block; border:1px solid var(--line);">
-          <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12px; color:var(--muted); margin-top:6px; text-align:center;">Front view</figcaption>
-        </figure>
-        <figure style="flex:0 0 calc(50% - 16px); margin:0; max-width:calc(50% - 16px);">
-          <img src="figures/back_view.png" alt="Robot setup back view" loading="lazy" style="width:100%; height:100%; object-fit:cover; border-radius:12px; display:block; border:1px solid var(--line);">
-          <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:12px; color:var(--muted); margin-top:6px; text-align:center;">Back view</figcaption>
-        </figure>
-      </div>
+      <figure style="margin:0;">
+        <img src="figures/setup.png" alt="Robot setup" loading="lazy" style="width:100%; border-radius:12px; display:block; border:1px solid var(--line);">
+      </figure>
     </section>
 
     <h2 class="sec-heading">Task Cards</h2>
