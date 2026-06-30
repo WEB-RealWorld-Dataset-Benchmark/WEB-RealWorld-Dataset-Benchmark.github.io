@@ -109,8 +109,8 @@
     .toc-list a.active { color: var(--accent); font-weight: 600; }
     .main-column { flex: 1; min-width: 0; }
     /* ── charts ── */
-    .charts-section { display: flex; flex-direction: row; gap: 32px; margin: 0 0 20px; }
-    .chart-card { flex: 1; min-width: 0; padding: 0; }
+    .charts-section { display: flex; flex-direction: column; gap: 36px; margin: 0 0 28px; }
+    .chart-card { width: 100%; }
     .chart-heading { font-family: "Times New Roman", Times, serif; font-size: clamp(20px, 1.8vw, 28px); font-weight: 700; color: #111827; letter-spacing: -0.02em; margin-bottom: 12px; }
     .chart-host { width: 100%; overflow-x: auto; }
     .chart-host svg { display: block; }
@@ -4743,8 +4743,8 @@
 
   <script id="charts-js">
   (function() {
-    const ACTIONS = [{"label": "organize", "value": 5170}, {"label": "sort", "value": 3982}, {"label": "pour", "value": 3777}, {"label": "stack", "value": 3535}, {"label": "put", "value": 2647}, {"label": "pack", "value": 2630}, {"label": "set", "value": 2212}, {"label": "return", "value": 2119}, {"label": "roll", "value": 1824}, {"label": "transfer", "value": 1821}, {"label": "arrange", "value": 1807}, {"label": "lift", "value": 1642}, {"label": "clean", "value": 1544}, {"label": "open", "value": 1501}, {"label": "hang", "value": 1476}, {"label": "bounce", "value": 1360}, {"label": "fold", "value": 1197}, {"label": "insert", "value": 1167}, {"label": "bag", "value": 1139}, {"label": "load", "value": 1036}, {"label": "solve", "value": 1013}, {"label": "remove", "value": 988}, {"label": "prepare", "value": 959}, {"label": "collect", "value": 774}, {"label": "clear", "value": 744}, {"label": "rotate", "value": 674}, {"label": "move", "value": 674}, {"label": "dry", "value": 651}, {"label": "connect", "value": 605}, {"label": "plug", "value": 593}, {"label": "stand", "value": 532}, {"label": "wrap", "value": 482}, {"label": "push", "value": 467}, {"label": "close", "value": 463}, {"label": "unload", "value": 432}, {"label": "assemble", "value": 418}, {"label": "unpack", "value": 402}, {"label": "seal", "value": 379}, {"label": "unplug", "value": 323}, {"label": "retrieve", "value": 276}];
-    const OBJECTS = [{"label": "contents", "value": 3952}, {"label": "rack", "value": 3485}, {"label": "bowl", "value": 3361}, {"label": "box", "value": 2978}, {"label": "storage", "value": 2298}, {"label": "pairs", "value": 2288}, {"label": "tower", "value": 2217}, {"label": "plates", "value": 2201}, {"label": "puzzle", "value": 2017}, {"label": "jewelry", "value": 1949}, {"label": "office", "value": 1904}, {"label": "tray", "value": 1892}, {"label": "dice", "value": 1824}, {"label": "shoes", "value": 1820}, {"label": "plate", "value": 1819}, {"label": "toy", "value": 1763}, {"label": "ball", "value": 1714}, {"label": "supplies", "value": 1670}, {"label": "pot", "value": 1642}, {"label": "shelf", "value": 1642}, {"label": "balls", "value": 1641}, {"label": "dishes", "value": 1574}, {"label": "hanoi", "value": 1541}, {"label": "containers", "value": 1532}, {"label": "rings", "value": 1420}, {"label": "food", "value": 1399}, {"label": "paddle", "value": 1360}, {"label": "pieces", "value": 1310}, {"label": "paper", "value": 1303}, {"label": "towel", "value": 1303}, {"label": "tennis", "value": 1174}, {"label": "bricks", "value": 1115}, {"label": "bento", "value": 1052}, {"label": "compartments", "value": 1052}, {"label": "coffee", "value": 1020}, {"label": "equipment", "value": 927}, {"label": "matching", "value": 915}, {"label": "bowls", "value": 910}, {"label": "desk", "value": 900}, {"label": "utensils", "value": 881}, {"label": "container", "value": 881}, {"label": "scoop", "value": 856}, {"label": "utensil", "value": 856}, {"label": "onto", "value": 850}, {"label": "shopping", "value": 832}, {"label": "battery", "value": 831}, {"label": "mouse", "value": 831}, {"label": "board", "value": 830}, {"label": "dishwasher", "value": 830}, {"label": "check", "value": 808}];
+    const ACTIONS = [{"label": "organize", "value": 5170}, {"label": "sort", "value": 3982}, {"label": "pour", "value": 3777}, {"label": "stack", "value": 3535}, {"label": "put", "value": 2647}, {"label": "pack", "value": 2630}, {"label": "set", "value": 2212}, {"label": "return", "value": 2119}, {"label": "roll", "value": 1824}, {"label": "transfer", "value": 1821}, {"label": "arrange", "value": 1807}, {"label": "lift", "value": 1642}, {"label": "clean", "value": 1544}, {"label": "open", "value": 1501}, {"label": "hang", "value": 1476}, {"label": "bounce", "value": 1360}, {"label": "fold", "value": 1197}, {"label": "insert", "value": 1167}, {"label": "bag", "value": 1139}, {"label": "load", "value": 1036}, {"label": "solve", "value": 1013}, {"label": "remove", "value": 988}, {"label": "prepare", "value": 959}, {"label": "scoop", "value": 856}, {"label": "collect", "value": 774}, {"label": "clear", "value": 744}, {"label": "rotate", "value": 674}, {"label": "move", "value": 674}, {"label": "dry", "value": 651}, {"label": "connect", "value": 605}, {"label": "plug", "value": 593}, {"label": "stand", "value": 532}, {"label": "wrap", "value": 482}, {"label": "push", "value": 467}, {"label": "close", "value": 463}, {"label": "place", "value": 450}, {"label": "unload", "value": 432}, {"label": "assemble", "value": 418}, {"label": "unpack", "value": 402}, {"label": "seal", "value": 379}, {"label": "unplug", "value": 323}, {"label": "retrieve", "value": 276}, {"label": "untie", "value": 236}];
+    const OBJECTS = [{"label": "contents", "value": 3952}, {"label": "rack", "value": 3485}, {"label": "bowl", "value": 3361}, {"label": "box", "value": 2978}, {"label": "storage", "value": 2298}, {"label": "pairs", "value": 2288}, {"label": "tower", "value": 2217}, {"label": "plates", "value": 2201}, {"label": "puzzle", "value": 2017}, {"label": "jewelry", "value": 1949}, {"label": "office", "value": 1904}, {"label": "tray", "value": 1892}, {"label": "dice", "value": 1824}, {"label": "shoes", "value": 1820}, {"label": "plate", "value": 1819}, {"label": "toy", "value": 1763}, {"label": "ball", "value": 1714}, {"label": "supplies", "value": 1670}, {"label": "pot", "value": 1642}, {"label": "shelf", "value": 1642}, {"label": "balls", "value": 1641}, {"label": "dishes", "value": 1574}, {"label": "hanoi", "value": 1541}, {"label": "containers", "value": 1532}, {"label": "rings", "value": 1420}, {"label": "food", "value": 1399}, {"label": "paddle", "value": 1360}, {"label": "pieces", "value": 1310}, {"label": "paper", "value": 1303}, {"label": "towel", "value": 1303}, {"label": "tennis", "value": 1174}, {"label": "bricks", "value": 1115}, {"label": "bento", "value": 1052}, {"label": "compartments", "value": 1052}, {"label": "coffee", "value": 1020}, {"label": "equipment", "value": 927}, {"label": "matching", "value": 915}, {"label": "bowls", "value": 910}, {"label": "desk", "value": 900}, {"label": "utensils", "value": 881}, {"label": "container", "value": 881}, {"label": "utensil", "value": 856}, {"label": "shopping", "value": 832}, {"label": "battery", "value": 831}, {"label": "mouse", "value": 831}, {"label": "board", "value": 830}, {"label": "dishwasher", "value": 830}, {"label": "result", "value": 808}, {"label": "blackboard", "value": 808}, {"label": "tube", "value": 774}];
 
     const tip = document.createElement('div');
     tip.className = 'chart-tooltip';
@@ -4757,7 +4757,7 @@
 
     function makeChart(hostId, data, barColor) {
       const host = document.getElementById(hostId);
-      const W = Math.max(host.getBoundingClientRect().width || host.parentElement.getBoundingClientRect().width || 900, 400);
+      const W = Math.max(host.getBoundingClientRect().width || host.parentElement.getBoundingClientRect().width || 900, 700);
       const mT = 16, mR = 24, mB = 120, mL = 52;
       const iW = W - mL - mR;
       const iH = 220;
@@ -4877,8 +4877,8 @@
 
     // defer until layout is complete so getBoundingClientRect() returns real widths
     window.addEventListener('load', function() {
-      makeChart('chart-actions', ACTIONS.slice(0, 20), '#2563EB');
-      makeChart('chart-objects', OBJECTS.slice(0, 25), '#00A878');
+      makeChart('chart-actions', ACTIONS, '#2563EB');
+      makeChart('chart-objects', OBJECTS, '#00A878');
 
       // Build TOC
       const tocList = document.getElementById('toc-list');
