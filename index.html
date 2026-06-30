@@ -32,11 +32,13 @@
       color: var(--text);
       background: var(--bg);
     }
-    .wrap { max-width: 1320px; margin: 0 auto; padding: 32px 20px 64px; }
+    .wrap { max-width: 1560px; margin: 0 auto; padding: 32px 28px 64px; }
     header { padding: 32px 0 20px; border-bottom: 2px solid var(--deep); margin-bottom: 24px; }
     h1 { margin: 0 0 8px; font-size: clamp(30px, 3.2vw, 52px); letter-spacing: -0.02em; color: #111827; font-family: "Times New Roman", Times, serif; }
+    .org-name { font-size: 26px; font-weight: 700; color: #111827; margin: 8px 0 2px; letter-spacing: -0.01em; }
     .subtitle { max-width: 900px; color: var(--muted); line-height: 1.7; margin: 0; font-size: 16px; }
-    .subtitle .affil { font-size: 14px; vertical-align: super; }
+    .subtitle .affil { font-size: 12px; vertical-align: super; }
+    .subtitle .core-badge { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; font-weight: 600; color: var(--accent2); background: var(--soft-green); border-radius: 6px; padding: 2px 7px; margin-right: 4px; }
     .grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 18px 0 26px; }
     .card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); }
     .task-card { background: var(--bg-section); border: 1px solid var(--line); box-shadow: var(--shadow); }
@@ -71,9 +73,9 @@
     .path-line span { color: var(--text); font-weight: 700; }
     .small .section-title { margin-bottom: 6px; }
     /* ── TOC ── */
-    .page-body { display: flex; align-items: flex-start; gap: 32px; margin-top: 8px; }
+    .page-body { display: flex; align-items: flex-start; gap: 20px; margin-top: 8px; }
     .toc-sidebar {
-      width: 220px; flex-shrink: 0;
+      width: 190px; flex-shrink: 0;
       position: sticky; top: 24px;
       max-height: calc(100vh - 48px); overflow-y: auto;
       border-right: 1px solid var(--line);
@@ -89,8 +91,8 @@
     .toc-list a.active { color: var(--accent); font-weight: 600; }
     .main-column { flex: 1; min-width: 0; }
     /* ── charts ── */
-    .charts-section { display: flex; flex-direction: column; gap: 8px; margin: 0 0 20px; }
-    .chart-card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 16px 24px 12px; box-shadow: var(--shadow); }
+    .charts-section { display: flex; flex-direction: row; gap: 10px; margin: 0 0 20px; }
+    .chart-card { flex: 1; min-width: 0; background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 16px 20px 12px; box-shadow: var(--shadow); }
     .chart-heading { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 14px; }
     .chart-host { width: 100%; overflow-x: auto; }
     .chart-host svg { display: block; }
@@ -126,14 +128,16 @@
   <div class="wrap">
     <header>
       <h1>WEB: WorldEngine Bimanual Manipulation Dataset</h1>
-      <p class="subtitle">
-        Shiduo Zhang<span class="affil">1,3</span>&ensp;
-        Yuchun Feng<span class="affil">1</span>&ensp;
-        Haonan Chang<span class="affil">1</span>&ensp;
-        Di Huang<span class="affil">1</span>&ensp;
+      <p class="org-name">WorldEngine AI</p>
+      <p class="subtitle" style="margin-top:6px;">
+        <span class="core-badge">* Core Contributors</span>
+        Shiduo Zhang<span class="affil">*1,3</span>&ensp;
+        Yuchun Feng<span class="affil">*1</span>&ensp;
+        Haonan Chang<span class="affil">*1</span>&ensp;
+        Di Huang<span class="affil">*1</span>&ensp;
         Yue Wang<span class="affil">1,2</span>
       </p>
-      <p class="subtitle" style="font-size:15px; margin-top:6px; color:#666;">
+      <p class="subtitle" style="font-size:14px; margin-top:4px; color:#888;">
         <sup>1</sup>WorldEngine AI&emsp;
         <sup>2</sup>University of Southern California&emsp;
         <sup>3</sup>Fudan University
