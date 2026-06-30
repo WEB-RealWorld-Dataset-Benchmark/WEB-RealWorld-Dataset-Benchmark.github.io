@@ -46,13 +46,11 @@
     summary::-webkit-details-marker { display: none; }
     .summary-left { min-width: 0; }
     .task-name { font-size: 26px; font-weight: 750; letter-spacing: -0.02em; }
-    .task-meta { display: none; }
+    .task-meta { margin-top: 4px; color: var(--muted); font-size: 17px; }
     .badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 8px 12px; font-size: 14px; font-weight: 700; white-space: nowrap; }
     .badge.present { background: rgba(23,92,74,0.13); color: var(--accent); }
     .task-body { border-top: 1px solid var(--line); padding: 16px 18px 20px; }
-    .stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-    .stat-grid > div:first-child, .stat-grid > div:last-child { display: none; }
-    .stat-grid > div { background: rgba(255,255,255,0.72); border: 1px solid var(--line); border-radius: 16px; padding: 12px; }
+    .stat-grid { display: none; }
     .label { color: var(--muted); font-size: 16px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
     .value { font-weight: 700; word-break: break-word; }
     .section { margin-top: 16px; }
@@ -84,7 +82,7 @@
     .toc-heading { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #aaa; margin-bottom: 10px; }
     .toc-list { list-style: none; margin: 0; padding: 0; }
     .toc-list li { margin: 0; }
-    .toc-list a { display: block; padding: 4px 0; font-size: 13px; color: #999; text-decoration: none; line-height: 1.4; border-radius: 3px; transition: color 0.12s; }
+    .toc-list a { display: block; padding: 4px 0; font-size: 17px; color: #999; text-decoration: none; line-height: 1.4; border-radius: 3px; transition: color 0.12s; }
     .toc-list a:hover { color: #111; }
     .toc-list a.active { color: #111; font-weight: 600; }
     .main-column { flex: 1; min-width: 0; }
@@ -111,7 +109,7 @@
       .prompt-edit { display: flex; flex-direction: column; gap: 8px; }
       .prompt-edit .prompt-input {
         width: 100%; box-sizing: border-box; resize: vertical;
-        font: inherit; font-size: 0.95rem; line-height: 1.4;
+        font: inherit; font-size: 17px; line-height: 1.4;
         padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 8px;
         background: #fff; color: #0f172a; min-height: 2.6em;
       }
@@ -255,7 +253,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="accessory-return/montage.jpg" target="_blank"><img src="accessory-return/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -319,7 +317,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="arrange-shoes-in-pairs/montage.jpg" target="_blank"><img src="arrange-shoes-in-pairs/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -377,7 +375,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="baby-clothes-sorting/montage.jpg" target="_blank"><img src="baby-clothes-sorting/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -439,7 +437,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="badminton-clean-up/montage.jpg" target="_blank"><img src="badminton-clean-up/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -501,7 +499,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="bag-packing-with-zipper-closure/montage.jpg" target="_blank"><img src="bag-packing-with-zipper-closure/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -559,7 +557,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="bagging-groceries/montage.jpg" target="_blank"><img src="bagging-groceries/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -616,7 +614,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="balance-scale/montage.jpg" target="_blank"><img src="balance-scale/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -674,7 +672,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="bowl-pouring/montage.jpg" target="_blank"><img src="bowl-pouring/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -730,7 +728,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="bracelet-return/montage.jpg" target="_blank"><img src="bracelet-return/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -788,7 +786,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="breakroom-essentials-organization/montage.jpg" target="_blank"><img src="breakroom-essentials-organization/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -847,7 +845,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="brick-stacking/montage.jpg" target="_blank"><img src="brick-stacking/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -907,7 +905,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="bussing-table/montage.jpg" target="_blank"><img src="bussing-table/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -966,7 +964,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="cable-assembling/montage.jpg" target="_blank"><img src="cable-assembling/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1022,7 +1020,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="clean-up-board-game/montage.jpg" target="_blank"><img src="clean-up-board-game/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1086,7 +1084,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="clothes-rack-return/montage.jpg" target="_blank"><img src="clothes-rack-return/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1145,7 +1143,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="coffee-pods-organization/montage.jpg" target="_blank"><img src="coffee-pods-organization/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1203,7 +1201,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="coffee-pods-retrieval/montage.jpg" target="_blank"><img src="coffee-pods-retrieval/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1260,7 +1258,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="color-sorting-items/montage.jpg" target="_blank"><img src="color-sorting-items/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1321,7 +1319,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="connect-pipe-segments/montage.jpg" target="_blank"><img src="connect-pipe-segments/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1378,7 +1376,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="cooking-utensils-organization/montage.jpg" target="_blank"><img src="cooking-utensils-organization/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1439,7 +1437,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="decorate-a-cake_toy_version/montage.jpg" target="_blank"><img src="decorate-a-cake_toy_version/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1495,7 +1493,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="desk-rack-organization/montage.jpg" target="_blank"><img src="desk-rack-organization/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1554,7 +1552,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="dice-roll-block/montage.jpg" target="_blank"><img src="dice-roll-block/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1614,7 +1612,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="dinnerware-organization/montage.jpg" target="_blank"><img src="dinnerware-organization/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1674,7 +1672,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="dry-asparagus/montage.jpg" target="_blank"><img src="dry-asparagus/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1732,7 +1730,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="fill-piggy-bank/montage.jpg" target="_blank"><img src="fill-piggy-bank/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1794,7 +1792,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="grocery-bag-folding/montage.jpg" target="_blank"><img src="grocery-bag-folding/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1851,7 +1849,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="hang-baseball-hats/montage.jpg" target="_blank"><img src="hang-baseball-hats/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1914,7 +1912,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="hanoi-tower-ring-placement/montage.jpg" target="_blank"><img src="hanoi-tower-ring-placement/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -1971,7 +1969,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="hardware-sorting/montage.jpg" target="_blank"><img src="hardware-sorting/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2029,7 +2027,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="insert-mouse-battery/montage.jpg" target="_blank"><img src="insert-mouse-battery/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2088,7 +2086,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="jenga-game-preparation/montage.jpg" target="_blank"><img src="jenga-game-preparation/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2144,7 +2142,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="jewlery-rings-return/montage.jpg" target="_blank"><img src="jewlery-rings-return/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2202,7 +2200,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="lift-a-pot/montage.jpg" target="_blank"><img src="lift-a-pot/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2261,7 +2259,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="load-dishware-rack/montage.jpg" target="_blank"><img src="load-dishware-rack/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2353,7 +2351,7 @@
               </div>
             </div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="magnetic-structure/montage.jpg" target="_blank"><img src="magnetic-structure/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2418,7 +2416,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="mechanical-lock-puzzle/montage.jpg" target="_blank"><img src="mechanical-lock-puzzle/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2481,7 +2479,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="mining-balls/montage.jpg" target="_blank"><img src="mining-balls/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2542,7 +2540,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="multiple-dice-ordering/montage.jpg" target="_blank"><img src="multiple-dice-ordering/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2600,7 +2598,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="office-desk-rack-setup/montage.jpg" target="_blank"><img src="office-desk-rack-setup/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2661,7 +2659,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="open-lock-box/montage.jpg" target="_blank"><img src="open-lock-box/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2722,7 +2720,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="open-sealed-box-and-take-something-out/montage.jpg" target="_blank"><img src="open-sealed-box-and-take-something-out/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2781,7 +2779,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="organize-office-supplies/montage.jpg" target="_blank"><img src="organize-office-supplies/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2842,7 +2840,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="pack-bento-box/montage.jpg" target="_blank"><img src="pack-bento-box/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2906,7 +2904,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="pack-lunch-boxes/montage.jpg" target="_blank"><img src="pack-lunch-boxes/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -2965,7 +2963,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="pack-sports-bag/montage.jpg" target="_blank"><img src="pack-sports-bag/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3026,7 +3024,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="pack-suitcase-for-trip/montage.jpg" target="_blank"><img src="pack-suitcase-for-trip/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3084,7 +3082,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="paddle-bouncing-a-ping-pong-ball/montage.jpg" target="_blank"><img src="paddle-bouncing-a-ping-pong-ball/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3143,7 +3141,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="paper-towel-setup/montage.jpg" target="_blank"><img src="paper-towel-setup/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3199,7 +3197,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="place-books-into-shelves/montage.jpg" target="_blank"><img src="place-books-into-shelves/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3262,7 +3260,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="pour-instant-coffee/montage.jpg" target="_blank"><img src="pour-instant-coffee/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3325,7 +3323,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="prepare-new-shoes/montage.jpg" target="_blank"><img src="prepare-new-shoes/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3385,7 +3383,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="prepare-sandwich/montage.jpg" target="_blank"><img src="prepare-sandwich/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3455,7 +3453,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="push-buttons-in-sequence/montage.jpg" target="_blank"><img src="push-buttons-in-sequence/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3514,7 +3512,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="restaurant-takeout/montage.jpg" target="_blank"><img src="restaurant-takeout/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3570,7 +3568,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="return-necklaces/montage.jpg" target="_blank"><img src="return-necklaces/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3632,7 +3630,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="return-new-shoes/montage.jpg" target="_blank"><img src="return-new-shoes/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3693,7 +3691,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="roll-dice-write-on-blackboard/montage.jpg" target="_blank"><img src="roll-dice-write-on-blackboard/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3752,7 +3750,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="scoop-with-containers/montage.jpg" target="_blank"><img src="scoop-with-containers/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3815,7 +3813,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="seal-water-bottle-cap/montage.jpg" target="_blank"><img src="seal-water-bottle-cap/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3874,7 +3872,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="separate-sports-equipment/montage.jpg" target="_blank"><img src="separate-sports-equipment/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -3941,7 +3939,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="set-up-board-game/montage.jpg" target="_blank"><img src="set-up-board-game/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4051,7 +4049,7 @@
               </div>
             </div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="set-up-checkerboard/montage.jpg" target="_blank"><img src="set-up-checkerboard/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4118,7 +4116,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="shape-sorter/montage.jpg" target="_blank"><img src="shape-sorter/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4175,7 +4173,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="shopping-basket-loading/montage.jpg" target="_blank"><img src="shopping-basket-loading/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4252,7 +4250,7 @@
               </div>
             </div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="simple-puzzle/montage.jpg" target="_blank"><img src="simple-puzzle/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4311,7 +4309,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="sock-matching-and-folding/montage.jpg" target="_blank"><img src="sock-matching-and-folding/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4374,7 +4372,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="sort-fruits-and-vegetables/montage.jpg" target="_blank"><img src="sort-fruits-and-vegetables/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4433,7 +4431,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="sort-kitchen-utensils/montage.jpg" target="_blank"><img src="sort-kitchen-utensils/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4492,7 +4490,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="sort-lego-by-color/montage.jpg" target="_blank"><img src="sort-lego-by-color/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4550,7 +4548,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="sort-toy-vehicles/montage.jpg" target="_blank"><img src="sort-toy-vehicles/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4610,7 +4608,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="stack-3d-prints/montage.jpg" target="_blank"><img src="stack-3d-prints/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4672,7 +4670,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="stack-nesting-cups/montage.jpg" target="_blank"><img src="stack-nesting-cups/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4732,7 +4730,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="tableware-stacking/montage.jpg" target="_blank"><img src="tableware-stacking/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4790,7 +4788,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="tennis-ball-cleanup/montage.jpg" target="_blank"><img src="tennis-ball-cleanup/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4851,7 +4849,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="tennis-preparation/montage.jpg" target="_blank"><img src="tennis-preparation/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4912,7 +4910,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="tool-collection-organization/montage.jpg" target="_blank"><img src="tool-collection-organization/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -4974,7 +4972,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="towel-folding-and-stacking/montage.jpg" target="_blank"><img src="towel-folding-and-stacking/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5033,7 +5031,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="tower-of-hanoi-game/montage.jpg" target="_blank"><img src="tower-of-hanoi-game/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5092,7 +5090,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="toy-robot/montage.jpg" target="_blank"><img src="toy-robot/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5150,7 +5148,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="transfer-items-with-a-tray/montage.jpg" target="_blank"><img src="transfer-items-with-a-tray/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5208,7 +5206,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="transfer-storage-items/montage.jpg" target="_blank"><img src="transfer-storage-items/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5266,7 +5264,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="trash-sorting/montage.jpg" target="_blank"><img src="trash-sorting/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5325,7 +5323,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="unload-dish-rack/montage.jpg" target="_blank"><img src="unload-dish-rack/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5384,7 +5382,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="untie-shoelaces/montage.jpg" target="_blank"><img src="untie-shoelaces/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5441,7 +5439,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="usb-cable-disassembling/montage.jpg" target="_blank"><img src="usb-cable-disassembling/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5502,7 +5500,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="usb-plugging/montage.jpg" target="_blank"><img src="usb-plugging/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5563,7 +5561,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="vacuum-dirty-surface/montage.jpg" target="_blank"><img src="vacuum-dirty-surface/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5623,7 +5621,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="whiteboard-supplies-organization/montage.jpg" target="_blank"><img src="whiteboard-supplies-organization/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
@@ -5682,7 +5680,7 @@
               <div class="video-label">file-000.mp4</div>
             </div></div>
             <div class="montage-wrap" style="margin-top:14px;">
-              <div class="video-label" style="margin-bottom:6px;">Storyboard</div>
+              <div class="section-title" style="margin-bottom:6px;">Storyboard</div>
               <a href="wrap-a-toy-for-storage/montage.jpg" target="_blank"><img src="wrap-a-toy-for-storage/montage.jpg" alt="storyboard montage" loading="lazy" style="width:100%; max-width:980px; border-radius:8px; display:block;"></a>
             </div>
           </div>
