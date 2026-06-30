@@ -7,30 +7,32 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #ffffff;
-      --bg2: #ffffff;
-      --card: #ffffff;
-      --text: #111111;
-      --muted: #555555;
-      --line: rgba(0,0,0,0.12);
-      --accent: #0d7c68;
-      --accent2: #1a6eb0;
-      --shadow: 0 2px 12px rgba(0,0,0,0.08);
+      --bg: #F7FAFA;
+      --card: #FFFFFF;
+      --text: #0F172A;
+      --muted: #64748B;
+      --line: #E2E8F0;
+      --accent: #1E6BFF;
+      --accent2: #20C997;
+      --deep: #102A43;
+      --cyan: #7FD7E8;
+      --soft-green: #DDF8EF;
+      --shadow: 0 2px 14px rgba(16,42,67,0.08);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Times New Roman", Times, serif;
       color: var(--text);
-      background: #ffffff;
+      background: var(--bg);
     }
     .wrap { max-width: 1320px; margin: 0 auto; padding: 32px 20px 64px; }
-    header { padding: 32px 0 20px; border-bottom: 2px solid #111; margin-bottom: 24px; }
-    h1 { margin: 0 0 8px; font-size: clamp(30px, 3.2vw, 52px); letter-spacing: -0.02em; color: #111; }
-    .subtitle { max-width: 900px; color: #444; line-height: 1.8; margin: 0; font-size: 17px; }
+    header { padding: 32px 0 20px; border-bottom: 2px solid var(--deep); margin-bottom: 24px; }
+    h1 { margin: 0 0 8px; font-size: clamp(30px, 3.2vw, 52px); letter-spacing: -0.02em; color: var(--deep); }
+    .subtitle { max-width: 900px; color: var(--muted); line-height: 1.8; margin: 0; font-size: 17px; }
     .subtitle .affil { font-size: 14px; vertical-align: super; }
     .grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 18px 0 26px; }
-    .card, .task-card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); backdrop-filter: blur(8px); }
+    .card, .task-card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); }
     .card { border-radius: 22px; padding: 18px 18px 16px; }
     .metric-label { font-size: 14px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 8px; }
     .metric-value { font-size: 36px; font-weight: 800; letter-spacing: -0.04em; }
@@ -49,7 +51,7 @@
     .task-name { font-size: 26px; font-weight: 750; letter-spacing: -0.02em; }
     .task-meta { margin-top: 4px; color: var(--muted); font-size: 17px; }
     .badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 8px 12px; font-size: 14px; font-weight: 700; white-space: nowrap; }
-    .badge.present { background: rgba(23,92,74,0.13); color: var(--accent); }
+    .badge.present { background: var(--soft-green); color: var(--accent2); }
     .task-body { border-top: 1px solid var(--line); padding: 16px 18px 20px; }
     .stat-grid { display: none; }
     .label { color: var(--muted); font-size: 16px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
@@ -75,17 +77,17 @@
       width: 220px; flex-shrink: 0;
       position: sticky; top: 24px;
       max-height: calc(100vh - 48px); overflow-y: auto;
-      border-right: 1px solid #ddd;
+      border-right: 1px solid var(--line);
       padding-right: 18px;
     }
     .toc-sidebar::-webkit-scrollbar { width: 4px; }
-    .toc-sidebar::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
-    .toc-heading { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #aaa; margin-bottom: 10px; }
+    .toc-sidebar::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+    .toc-heading { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 10px; }
     .toc-list { list-style: none; margin: 0; padding: 0; }
     .toc-list li { margin: 0; }
-    .toc-list a { display: block; padding: 4px 0; font-size: 17px; color: #999; text-decoration: none; line-height: 1.4; border-radius: 3px; transition: color 0.12s; }
-    .toc-list a:hover { color: #111; }
-    .toc-list a.active { color: #111; font-weight: 600; }
+    .toc-list a { display: block; padding: 4px 0; font-size: 17px; color: var(--muted); text-decoration: none; line-height: 1.4; border-radius: 3px; transition: color 0.12s; }
+    .toc-list a:hover { color: var(--deep); }
+    .toc-list a.active { color: var(--accent); font-weight: 600; }
     .main-column { flex: 1; min-width: 0; }
     /* ── charts ── */
     .charts-section { display: flex; flex-direction: column; gap: 20px; margin: 0 0 26px; }
@@ -93,7 +95,7 @@
     .chart-heading { font-size: 19px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 14px; }
     .chart-host { width: 100%; overflow-x: auto; }
     .chart-host svg { display: block; }
-    .chart-tooltip { position: fixed; background: #0c1f1b; color: #fff; padding: 6px 12px; border-radius: 10px; font-size: 17px; font-weight: 600; pointer-events: none; opacity: 0; transition: opacity 0.12s; z-index: 9999; white-space: nowrap; }
+    .chart-tooltip { position: fixed; background: var(--deep); color: #fff; padding: 6px 12px; border-radius: 10px; font-size: 17px; font-weight: 600; pointer-events: none; opacity: 0; transition: opacity 0.12s; z-index: 9999; white-space: nowrap; }
     @media (max-width: 1100px) {
       .grid, .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .video-grid { grid-template-columns: 1fr; }
@@ -166,33 +168,32 @@
       <div class="card">
         <div class="metric-label">Tasks</div>
         <div class="metric-value">90</div>
-        <div class="metric-note">Task folders discovered under the dataset root.</div>
+        <div class="metric-note">Diverse real-world bimanual manipulation scenarios</div>
       </div>
       <div class="card">
         <div class="metric-label">Episodes</div>
         <div class="metric-value">50,266</div>
-        <div class="metric-note">Sum of <code>total_episodes</code> from each local <code>info.json</code>.</div>
+        <div class="metric-note">Expert human demonstrations collected in the wild</div>
       </div>
       <div class="card">
         <div class="metric-label">Frames</div>
-        <div class="metric-value">199,332,169</div>
-        <div class="metric-note">Sum of <code>total_frames</code> across tasks.</div>
+        <div class="metric-value">199M+</div>
+        <div class="metric-note">High-fidelity 60 fps frames across all recordings</div>
       </div>
       <div class="card">
         <div class="metric-label">Videos</div>
-        <div class="metric-value">150,798</div>
-        <div class="metric-note">All <code>.mp4</code> files found under each task's <code>videos/</code> tree.</div>
+        <div class="metric-value">150K+</div>
+        <div class="metric-note">Synchronized multi-camera streams per episode</div>
       </div>
       <div class="card">
         <div class="metric-label">Total Duration</div>
         <div class="metric-value">923 hrs</div>
-        <div class="metric-note">199,332,169 frames ÷ 60 fps ÷ 3,600 s/hr.</div>
+        <div class="metric-note">Of real-world bimanual robot interaction</div>
       </div>
     </div>
 
     <div class="toolbar">
       <input id="filter" type="search" placeholder="Filter by task name or description" />
-      <div class="hint">Type keywords to find specific tasks.</div>
     </div>
 
     <!-- ── Charts ── -->
@@ -5737,7 +5738,7 @@
         txt.setAttribute('x', -6); txt.setAttribute('y', y + 4);
         txt.setAttribute('text-anchor', 'end');
         txt.setAttribute('font-size', '15');
-        txt.setAttribute('fill', '#888');
+        txt.setAttribute('fill', '#64748B');
         txt.setAttribute('font-family', '"Times New Roman",Times,serif');
         txt.textContent = Math.round(maxVal * t);
         g.appendChild(txt);
@@ -5783,7 +5784,7 @@
         xl.setAttribute('transform', `rotate(-45,${cx},${iH + 10})`);
         xl.setAttribute('text-anchor', 'end');
         xl.setAttribute('font-size', '15');
-        xl.setAttribute('fill', '#666');
+        xl.setAttribute('fill', '#64748B');
         xl.setAttribute('font-family', '"Times New Roman",Times,serif');
         xl.textContent = d.label;
         g.appendChild(xl);
@@ -5812,8 +5813,8 @@
 
     // defer until layout is complete so getBoundingClientRect() returns real widths
     window.addEventListener('load', function() {
-      makeChart('chart-actions', ACTIONS, '#2d2d2d');   // near-black, clean
-      makeChart('chart-objects', OBJECTS, '#5a7fa8');   // muted steel blue
+      makeChart('chart-actions', ACTIONS, '#1E6BFF');   // primary-blue
+      makeChart('chart-objects', OBJECTS, '#20C997');   // primary-green
 
       // Build TOC
       const tocList = document.getElementById('toc-list');
