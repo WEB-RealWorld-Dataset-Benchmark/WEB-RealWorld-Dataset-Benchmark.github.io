@@ -18,6 +18,7 @@ import threading
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+DATA_ROOT = os.path.join(os.path.dirname(ROOT), "we_d900")  # videos live here
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
 PROMPTS_PATH = os.path.join(ROOT, "prompts_merged.json")
 SLUG_RE = re.compile(r"^[A-Za-z0-9._-]+$")  # task dir names only; blocks path traversal
@@ -55,6 +56,15 @@ def save_prompt(task: str, prompt: str) -> str:
 
 
 class Handler(SimpleHTTPRequestHandler):
+    def translate_path(self, path):
+        result = super().translate_path(path)
+        if not os.path.exists(result):
+            rel = os.path.relpath(result, ROOT)
+            fallback = os.path.join(DATA_ROOT, rel)
+            if os.path.exists(fallback):
+                return fallback
+        return result
+
     def _json(self, code, obj):
         body = json.dumps(obj).encode("utf-8")
         self.send_response(code)
