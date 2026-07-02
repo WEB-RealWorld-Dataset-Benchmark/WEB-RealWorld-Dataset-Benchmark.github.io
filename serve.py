@@ -28,7 +28,7 @@ def save_prompt(task: str, prompt: str) -> str:
     """Store `prompt` for `task` in prompts.json. Returns the file's relative path."""
     if not SLUG_RE.match(task):
         raise ValueError(f"invalid task name: {task!r}")
-    if not os.path.isdir(os.path.join(ROOT, task)):
+    if not os.path.isdir(os.path.join(ROOT, "assets", task)):
         raise FileNotFoundError(f"no such task directory: {task!r}")
 
     with _lock:
