@@ -108,6 +108,13 @@
     .toc-list a:hover { color: var(--deep); }
     .toc-list a.active { color: var(--accent); font-weight: 600; }
     .main-column { flex: 1; min-width: 0; }
+    /* ── router views ── */
+    .view { display: none; }
+    .view.active { display: block; animation: view-fade 0.25s ease; }
+    @keyframes view-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    /* nested sub-router inside the Tasks view: one task card at a time */
+    #task-list details.task-card { display: none; }
+    #task-list details.task-card.active { display: block; animation: view-fade 0.25s ease; }
     /* ── charts ── */
     .charts-section { display: flex; flex-direction: column; gap: 36px; margin: 0 0 28px; }
     .chart-card { width: 100%; }
@@ -147,10 +154,10 @@
   <nav class="page-nav">
     <div class="page-nav-heading">On this page</div>
     <ul class="page-nav-list">
-      <li><a href="#dataset-analysis">Dataset Analysis</a></li>
-      <li><a href="#setup-section">Setup</a></li>
-      <li><a href="#task-cards">Task Cards</a></li>
-      <li><a href="#hardware-setup">Hardware Setup</a></li>
+      <li><a href="#overview" data-view="overview">Dataset Analysis</a></li>
+      <li><a href="#setup" data-view="setup">Setup</a></li>
+      <li><a href="#tasks" data-view="tasks">Task Cards</a></li>
+      <li><a href="#hardware-setup" data-view="hardware-setup">Hardware Setup</a></li>
     </ul>
   </nav>
   <div class="wrap">
@@ -172,6 +179,7 @@
       </p>
     </header>
 
+    <section id="view-overview" class="view">
     <div class="grid">
       <div class="card">
         <div class="metric-label">Tasks</div>
@@ -212,15 +220,17 @@
         <div id="chart-objects" class="chart-host"></div>
       </div>
     </div>
+    </section><!-- /#view-overview -->
 
     <!-- ── Setup ── -->
-    <section id="setup-section" style="margin: 0 0 32px;">
+    <section id="view-setup" class="view" style="margin: 0 0 32px;">
       <h2 class="sec-heading">Setup</h2>
       <figure style="margin:0;">
         <img src="figures/setup.png" alt="Robot setup" loading="lazy" style="width:100%; border-radius:12px; display:block; border:1px solid var(--line);">
       </figure>
-    </section>
+    </section><!-- /#view-setup -->
 
+    <section id="view-tasks" class="view">
     <h2 class="sec-heading">Task Cards</h2>
     <div id="task-cards" class="page-body">
       <nav class="toc-sidebar" aria-label="Table of contents">
@@ -4731,24 +4741,21 @@
     </div>
       </div><!-- /.main-column -->
     </div><!-- /.page-body -->
+    </section><!-- /#view-tasks -->
 
-    <!-- Hardware Setup Section -->
-    <h2 class="sec-heading" style="margin-top:56px;">Hardware Setup</h2>
-    <section id="hardware-setup" style="max-width:900px;">
+    <section id="view-hardware-setup" class="view" style="max-width:900px; padding-bottom:64px;">
+      <h2 class="sec-heading" style="margin-bottom:28px;">Hardware Setup</h2>
 
       <h3 style="font-family:'Times New Roman',Times,serif; font-size:clamp(18px,1.6vw,24px); font-weight:700; color:#111827; margin:0 0 20px;">1. Material List</h3>
 
-      <!-- 1.1 Frame -->
       <h4 style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin:0 0 10px;">1.1 Frame</h4>
       <div style="overflow-x:auto; margin-bottom:32px;">
         <table style="width:100%; border-collapse:collapse; font-size:14px;">
-          <thead>
-            <tr style="border-bottom:2px solid var(--line);">
-              <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Item</th>
-              <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Size</th>
-              <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Qty</th>
-            </tr>
-          </thead>
+          <thead><tr style="border-bottom:2px solid var(--line);">
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Item</th>
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Size</th>
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Qty</th>
+          </tr></thead>
           <tbody>
             <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">5×10</td><td style="padding:8px 12px;">77</td></tr>
             <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">5×8</td><td style="padding:8px 12px;">14</td></tr>
@@ -4769,17 +4776,14 @@
         </table>
       </div>
 
-      <!-- 1.2 Robotic Arms & Gello -->
       <h4 style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin:0 0 10px;">1.2 Robotic Arms &amp; Gello</h4>
       <div style="overflow-x:auto; margin-bottom:32px;">
         <table style="width:100%; border-collapse:collapse; font-size:14px;">
-          <thead>
-            <tr style="border-bottom:2px solid var(--line);">
-              <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Item</th>
-              <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Size</th>
-              <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Qty</th>
-            </tr>
-          </thead>
+          <thead><tr style="border-bottom:2px solid var(--line);">
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Item</th>
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Size</th>
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Qty</th>
+          </tr></thead>
           <tbody>
             <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Fixed support — camera</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">2</td></tr>
             <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Fixed support — robot arm</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">4</td></tr>
@@ -4793,16 +4797,13 @@
         </table>
       </div>
 
-      <!-- 1.3 Computers -->
       <h4 style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin:0 0 10px;">1.3 Computers</h4>
       <div style="overflow-x:auto; margin-bottom:48px;">
         <table style="width:100%; border-collapse:collapse; font-size:14px;">
-          <thead>
-            <tr style="border-bottom:2px solid var(--line);">
-              <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Item</th>
-              <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Qty</th>
-            </tr>
-          </thead>
+          <thead><tr style="border-bottom:2px solid var(--line);">
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Item</th>
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Qty</th>
+          </tr></thead>
           <tbody>
             <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Case</td><td style="padding:8px 12px;">1</td></tr>
             <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Monitor</td><td style="padding:8px 12px;">1</td></tr>
@@ -4814,10 +4815,8 @@
         </table>
       </div>
 
-      <!-- 2. Installation Steps -->
       <h3 style="font-family:'Times New Roman',Times,serif; font-size:clamp(18px,1.6vw,24px); font-weight:700; color:#111827; margin:0 0 20px;">2. Installation Steps</h3>
 
-      <!-- 2.1 Workflat & Frame -->
       <h4 style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin:0 0 14px;">2.1 Workflat &amp; Frame</h4>
       <ol style="margin:0 0 32px; padding-left:20px; display:flex; flex-direction:column; gap:10px; font-size:15px; line-height:1.6;">
         <li>Assemble three 120×2cm bars into a U-shape around the table frame.</li>
@@ -4828,7 +4827,6 @@
         <li>Install the camera at the bottom position of the 40×2cm beam.</li>
       </ol>
 
-      <!-- 2.2 Robotic Arms & Gello -->
       <h4 style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin:0 0 14px;">2.2 Robotic Arms &amp; Gello</h4>
       <ol style="margin:0 0 32px; padding-left:20px; display:flex; flex-direction:column; gap:10px; font-size:15px; line-height:1.6;">
         <li>Use clamps to secure the two robot arms, with a distance of 25cm from the edge of the table.</li>
@@ -4836,14 +4834,12 @@
         <li>Secure the gello to the two outer metal bars, with a distance of 5cm from the edge of the table.</li>
       </ol>
 
-      <!-- 2.3 Computers and Accessories -->
       <h4 style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin:0 0 14px;">2.3 Computers &amp; Accessories</h4>
-      <ol style="margin:0 0 48px; padding-left:20px; display:flex; flex-direction:column; gap:10px; font-size:15px; line-height:1.6;">
+      <ol style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:10px; font-size:15px; line-height:1.6;">
         <li>Connect the monitor, keyboard, mouse, and foot switch to the computer using the USB hub.</li>
         <li>Use USB 2.0 for the gello and robot arm. Use USB 10G for the top camera. One robot arm camera uses a USB 5GB port, while the other uses a Type-C port through an adapter.</li>
       </ol>
-
-    </section>
+    </section><!-- /#view-hardware-setup -->
 
   </div><!-- /.wrap -->
 </div><!-- /.page-outer -->
@@ -4983,57 +4979,94 @@
       io.observe(host);
     }
 
-    // defer until layout is complete so getBoundingClientRect() returns real widths
-    window.addEventListener('load', function() {
+    // Charts must be built while the Overview view is visible — a hidden
+    // host reports 0 width to getBoundingClientRect(). The router calls this
+    // once the Overview view is on screen.
+    let chartsBuilt = false;
+    window.renderCharts = function() {
+      if (chartsBuilt) return;
+      chartsBuilt = true;
       makeChart('chart-actions', ACTIONS, '#446BC0');
       makeChart('chart-objects', OBJECTS, '#45AA8E');
+    };
 
-      // Build TOC
+    window.addEventListener('load', function() {
+      // Build the TOC, which doubles as a sub-router: each link shows a
+      // single task card (#tasks/task-<i>) instead of the whole stack.
       const tocList = document.getElementById('toc-list');
       const cards = document.querySelectorAll('#task-list details.task-card');
       const tocLinks = [];
+      const cardById = {};
       cards.forEach((card, i) => {
         const name = card.querySelector('.task-name').textContent.trim();
         const id = 'task-' + i;
         card.id = id;
+        card.setAttribute('open', '');
+        cardById[id] = card;
         const li = document.createElement('li');
         const a = document.createElement('a');
-        a.href = '#' + id;
+        a.href = '#tasks/' + id;
         a.textContent = name;
+        a.dataset.task = id;
         li.appendChild(a);
         tocList.appendChild(li);
         tocLinks.push(a);
       });
 
-      // Highlight active TOC item on scroll
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          const idx = Array.from(cards).indexOf(entry.target);
-          if (idx >= 0 && entry.isIntersecting) {
-            tocLinks.forEach(l => l.classList.remove('active'));
-            tocLinks[idx].classList.add('active');
-            tocLinks[idx].scrollIntoView({ block: 'nearest' });
-          }
+      window.__firstTaskId = cards.length ? 'task-0' : '';
+      // Called by the top-level router when the Tasks view is shown.
+      window.showTask = function (id) {
+        if (!cardById[id]) id = window.__firstTaskId;
+        cards.forEach(c => c.classList.remove('active'));
+        if (cardById[id]) cardById[id].classList.add('active');
+        tocLinks.forEach(l => {
+          const on = l.dataset.task === id;
+          l.classList.toggle('active', on);
+          if (on) l.scrollIntoView({ block: 'nearest' });
         });
-      }, { rootMargin: '-10% 0px -80% 0px' });
-      cards.forEach(c => observer.observe(c));
+      };
     });
   })();
   </script>
 
   <script>
-    // Page-nav active link highlighting
-    const pageNavLinks = document.querySelectorAll('.page-nav-list a');
-    const pageSections = ['dataset-analysis','setup-section','task-cards','hardware-setup'].map(id => document.getElementById(id)).filter(Boolean);
-    const pageNavObs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const href = '#' + entry.target.id;
-          pageNavLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === href));
+    // ── hash router: show one view at a time instead of one long page ──
+    (function () {
+      const routes = ['overview', 'setup', 'tasks', 'hardware-setup'];
+      const navLinks = document.querySelectorAll('.page-nav-list a');
+
+      // hash format: #view  or  #tasks/task-<i>  (second segment = sub-route)
+      function parse() {
+        const parts = location.hash.replace('#', '').split('/');
+        return {
+          view: routes.includes(parts[0]) ? parts[0] : 'overview',
+          sub: parts[1] || ''
+        };
+      }
+
+      function show(allowCharts) {
+        const { view, sub } = parse();
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+        const el = document.getElementById('view-' + view);
+        if (el) el.classList.add('active');
+        navLinks.forEach(l => l.classList.toggle('active', l.dataset.view === view));
+        // charts render lazily so they measure a visible (non-zero-width) host
+        if (allowCharts && view === 'overview' && typeof window.renderCharts === 'function') {
+          window.renderCharts();
         }
-      });
-    }, { rootMargin: '-10% 0px -70% 0px' });
-    pageSections.forEach(s => pageNavObs.observe(s));
+        // drive the nested task sub-router (available after load builds the TOC)
+        if (view === 'tasks' && typeof window.showTask === 'function') {
+          window.showTask(sub || window.__firstTaskId);
+        }
+        window.scrollTo(0, 0);
+      }
+
+      window.addEventListener('hashchange', () => show(true));
+      // defer charts to load so getBoundingClientRect() returns real widths
+      window.addEventListener('load', () => show(true));
+      // paint the initial view immediately to avoid a flash of hidden content
+      show(false);
+    })();
   </script>
   </body>
 </html>
