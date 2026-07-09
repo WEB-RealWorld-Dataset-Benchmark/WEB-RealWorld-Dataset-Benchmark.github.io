@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WEB: WorldEngine Bimanual Manipulation Dataset</title>
+  <title>WEB: WorldEngine Bimanual Manipulation Dataset and Real-World Benchmark</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap">
@@ -57,6 +57,27 @@
     .subtitle { color: var(--muted); line-height: 1.7; margin: 0; font-size: 16px; }
     .subtitle .affil { font-size: 12px; vertical-align: super; }
     .subtitle .core-badge { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600; color: var(--accent2); background: var(--soft-green); border-radius: 6px; padding: 2px 8px; margin-right: 6px; }
+    .resource-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .resource-link {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 18px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--card);
+      color: var(--text); text-decoration: none;
+      font-family: 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 13px; font-weight: 600;
+      box-shadow: var(--shadow);
+      transition: border-color 0.15s, color 0.15s, transform 0.15s;
+    }
+    .resource-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .resource-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .resource-link .emoji-icon { font-size: 15px; line-height: 1; }
+    .teaser-wrap { max-width: 1040px; margin: 0 auto 36px; }
+    .teaser-video {
+      display: block; width: 100%; border-radius: 16px;
+      border: 1px solid var(--line); box-shadow: var(--shadow);
+      background: #000;
+    }
+    .teaser-caption { text-align: center; margin: 14px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
     .grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 18px 0 26px; }
     .card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); }
     .task-card { background: var(--bg-section); border: 1px solid var(--line); box-shadow: var(--shadow); }
@@ -161,11 +182,11 @@
   </nav>
   <div class="wrap">
     <header>
-      <h1>WEB: WorldEngine Bimanual Manipulation Dataset</h1>
+      <h1>WEB: WorldEngine Bimanual Manipulation Dataset and Real-World Benchmark</h1>
       <p class="org-name">WorldEngine AI</p>
       <p class="subtitle" style="margin-top:6px;">
         <span class="core-badge">Core Contributors</span>
-        Shiduo Zhang<span class="affil">1,3</span>&ensp;
+        Shiduo Zhang<span class="affil">1</span>&ensp;
         Yuchun Feng<span class="affil">1</span>&ensp;
         Haonan Chang<span class="affil">1</span>&ensp;
         Di Huang<span class="affil">1</span>&ensp;
@@ -173,12 +194,41 @@
       </p>
       <p class="subtitle" style="font-size:14px; margin-top:4px; color:#888;">
         <sup>1</sup>WorldEngine AI&emsp;
-        <sup>2</sup>University of Southern California&emsp;
-        <sup>3</sup>Fudan University
+        <sup>2</sup>University of Southern California
       </p>
+      <!-- TODO: replace href="#" placeholder with the real arXiv / paper link once available -->
+      <div class="resource-links">
+        <a class="resource-link" href="#" target="_blank" rel="noopener">
+          <span class="emoji-icon">📄</span> arXiv
+        </a>
+        <a class="resource-link" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+          Paper
+        </a>
+        <a class="resource-link" href="https://huggingface.co/datasets/WorldEngineAI/WEB-Dataset" target="_blank" rel="noopener">
+          <span class="emoji-icon">🤗</span> Dataset
+        </a>
+        <a class="resource-link" href="https://github.com/worldEngineDev/WEB-Hardware" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></svg>
+          Hardware
+        </a>
+        <a class="resource-link" href="https://github.com/posttraining-for-robotics/openpi-baseline" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.99 3.24 9.22 7.74 10.72.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.15.68-3.81-1.34-3.81-1.34-.51-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.65 1.24 3.3.95.1-.73.4-1.24.72-1.53-2.52-.29-5.16-1.26-5.16-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.13 1.16a10.9 10.9 0 0 1 2.85-.38c.97 0 1.94.13 2.85.38 2.17-1.47 3.13-1.16 3.13-1.16.62 1.58.23 2.75.11 3.04.73.79 1.17 1.8 1.17 3.04 0 4.35-2.64 5.31-5.17 5.59.41.35.77 1.04.77 2.11 0 1.52-.01 2.75-.01 3.12 0 .3.2.66.79.55A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z"/></svg>
+          Code
+        </a>
+      </div>
     </header>
 
     <section id="view-overview" class="view">
+    <div class="teaser-wrap">
+      <video class="teaser-video" autoplay loop muted playsinline controls>
+        <source src="assets/teaser.mp4" type="video/mp4">
+        Your browser does not support HTML5 video. <a href="assets/teaser.mp4" target="_blank">Download video</a>
+      </video>
+      <p class="teaser-caption">WEB captures large-scale, high-fidelity bimanual manipulation demonstrations across 90 real-world tasks.</p>
+    </div>
+
+    <h2 class="sec-heading">Dataset Statistics</h2>
     <div class="grid">
       <div class="card">
         <div class="metric-label">Tasks</div>
@@ -208,7 +258,6 @@
     </div>
 
     <!-- ── Charts ── -->
-    <h2 class="sec-heading">Dataset Analysis</h2>
     <div id="dataset-analysis" class="charts-section">
       <div class="chart-card">
         <div class="chart-heading">Top Actions</div>
@@ -367,7 +416,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/accessory-return/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/accessory-return/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -420,7 +469,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/arrange-shoes-in-pairs/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/arrange-shoes-in-pairs/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -467,7 +516,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/baby-clothes-sorting/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/baby-clothes-sorting/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -518,7 +567,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/badminton-clean-up/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/badminton-clean-up/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -569,7 +618,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/bag-packing-with-zipper-closure/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/bag-packing-with-zipper-closure/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -616,7 +665,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/bagging-groceries/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/bagging-groceries/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -662,7 +711,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/balance-scale/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/balance-scale/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -709,7 +758,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/bowl-pouring/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/bowl-pouring/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -754,7 +803,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/bracelet-return/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/bracelet-return/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -801,7 +850,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/breakroom-essentials-organization/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/breakroom-essentials-organization/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -849,7 +898,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/brick-stacking/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/brick-stacking/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -898,7 +947,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/bussing-table/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/bussing-table/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -946,7 +995,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/cable-assembling/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/cable-assembling/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -991,7 +1040,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/clean-up-board-game/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/clean-up-board-game/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1044,7 +1093,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/clothes-rack-return/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/clothes-rack-return/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1092,7 +1141,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/coffee-pods-organization/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/coffee-pods-organization/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1139,7 +1188,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/coffee-pods-retrieval/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/coffee-pods-retrieval/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1185,7 +1234,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/color-sorting-items/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/color-sorting-items/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1235,7 +1284,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/connect-pipe-segments/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/connect-pipe-segments/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1281,7 +1330,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/cooking-utensils-organization/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/cooking-utensils-organization/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1331,7 +1380,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/decorate-a-cake_toy_version/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/decorate-a-cake_toy_version/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1376,7 +1425,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/desk-rack-organization/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/desk-rack-organization/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1424,7 +1473,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/dice-roll-block/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/dice-roll-block/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1473,7 +1522,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/dinnerware-organization/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/dinnerware-organization/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1522,7 +1571,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/dry-asparagus/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/dry-asparagus/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1569,7 +1618,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/fill-piggy-bank/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/fill-piggy-bank/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1620,7 +1669,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/grocery-bag-folding/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/grocery-bag-folding/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1666,7 +1715,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/hang-baseball-hats/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/hang-baseball-hats/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1718,7 +1767,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/hanoi-tower-ring-placement/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/hanoi-tower-ring-placement/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1764,7 +1813,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/hardware-sorting/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/hardware-sorting/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1811,7 +1860,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/insert-mouse-battery/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/insert-mouse-battery/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1859,7 +1908,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/jenga-game-preparation/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/jenga-game-preparation/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1904,7 +1953,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/jewlery-rings-return/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/jewlery-rings-return/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1951,7 +2000,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/lift-a-pot/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/lift-a-pot/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -1999,7 +2048,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/load-dishware-rack/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/load-dishware-rack/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2065,21 +2114,21 @@
             <div class="section-title">Variant videos (cam_high)</div>
             <div class="video-grid">
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/magnetic-structure/file-005.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
                 <div class="video-label"><strong>ep-005</strong> — Isosceles triangles: green + red + yellow</div>
               </div>
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/magnetic-structure/file-000.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
                 <div class="video-label"><strong>ep-000</strong> — Mixed: purple isosceles + green/red/yellow squares + rotate</div>
               </div>
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/magnetic-structure/file-016.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
@@ -2135,7 +2184,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/mechanical-lock-puzzle/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/mechanical-lock-puzzle/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2187,7 +2236,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/mining-balls/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/mining-balls/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2237,7 +2286,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/multiple-dice-ordering/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/multiple-dice-ordering/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2284,7 +2333,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/office-desk-rack-setup/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/office-desk-rack-setup/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2334,7 +2383,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/open-lock-box/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/open-lock-box/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2384,7 +2433,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/open-sealed-box-and-take-something-out/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/open-sealed-box-and-take-something-out/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2432,7 +2481,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/organize-office-supplies/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/organize-office-supplies/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2482,7 +2531,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/pack-bento-box/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/pack-bento-box/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2535,7 +2584,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/pack-lunch-boxes/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/pack-lunch-boxes/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2583,7 +2632,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/pack-sports-bag/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/pack-sports-bag/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2633,7 +2682,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/pack-suitcase-for-trip/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/pack-suitcase-for-trip/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2680,7 +2729,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/paddle-bouncing-a-ping-pong-ball/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/paddle-bouncing-a-ping-pong-ball/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2728,7 +2777,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/paper-towel-setup/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/paper-towel-setup/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2773,7 +2822,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/place-books-into-shelves/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/place-books-into-shelves/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2825,7 +2874,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/pour-instant-coffee/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/pour-instant-coffee/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2877,7 +2926,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/prepare-new-shoes/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/prepare-new-shoes/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2926,7 +2975,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/prepare-sandwich/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/prepare-sandwich/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -2985,7 +3034,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/push-buttons-in-sequence/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/push-buttons-in-sequence/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3033,7 +3082,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/restaurant-takeout/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/restaurant-takeout/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3078,7 +3127,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/return-necklaces/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/return-necklaces/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3129,7 +3178,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/return-new-shoes/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/return-new-shoes/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3179,7 +3228,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/roll-dice-write-on-blackboard/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/roll-dice-write-on-blackboard/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3227,7 +3276,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/scoop-with-containers/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/scoop-with-containers/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3279,7 +3328,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/seal-water-bottle-cap/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/seal-water-bottle-cap/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3327,7 +3376,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/separate-sports-equipment/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/separate-sports-equipment/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3383,7 +3432,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/set-up-board-game/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/set-up-board-game/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3439,49 +3488,49 @@
             <div class="section-title">Variant videos (cam_high)</div>
             <div class="video-grid">
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/set-up-checkerboard/file-000.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
                 <div class="video-label"><strong>ep-000</strong> — Empty board: white piece first → determine-side placements</div>
               </div>
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/set-up-checkerboard/file-001.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
                 <div class="video-label"><strong>ep-001</strong> — Empty board: dark piece first → determine-side placements</div>
               </div>
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/set-up-checkerboard/file-005.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
                 <div class="video-label"><strong>ep-005</strong> — Incorrect positions only: fix white + brown pieces</div>
               </div>
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/set-up-checkerboard/file-016.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
                 <div class="video-label"><strong>ep-016</strong> — Mixed: determine-side + fix incorrectly placed pieces</div>
               </div>
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/set-up-checkerboard/file-030.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
                 <div class="video-label"><strong>ep-030</strong> — Determine-side only: grab white + brown, place by side</div>
               </div>
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/set-up-checkerboard/file-172.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
                 <div class="video-label"><strong>ep-172</strong> — cam_high</div>
               </div>
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/set-up-checkerboard/file-229.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
@@ -3539,7 +3588,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/shape-sorter/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/shape-sorter/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3585,7 +3634,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/shopping-basket-loading/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/shopping-basket-loading/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3643,14 +3692,14 @@
             <div class="section-title">Variant videos (cam_high)</div>
             <div class="video-grid">
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/simple-puzzle/file-004.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
                 <div class="video-label"><strong>ep-004</strong> — Butterfly puzzle: body + purple UL + light green UR + dark green LL + red right wing</div>
               </div>
               <div class="video-player">
-                <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+                <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                   <source src="assets/simple-puzzle/file-000.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                 </video>
@@ -3700,7 +3749,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/sock-matching-and-folding/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/sock-matching-and-folding/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3752,7 +3801,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/sort-fruits-and-vegetables/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/sort-fruits-and-vegetables/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3800,7 +3849,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/sort-kitchen-utensils/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/sort-kitchen-utensils/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3848,7 +3897,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/sort-lego-by-color/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/sort-lego-by-color/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3895,7 +3944,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/sort-toy-vehicles/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/sort-toy-vehicles/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3944,7 +3993,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/stack-3d-prints/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/stack-3d-prints/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -3995,7 +4044,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/stack-nesting-cups/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/stack-nesting-cups/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4044,7 +4093,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/tableware-stacking/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/tableware-stacking/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4091,7 +4140,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/tennis-ball-cleanup/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/tennis-ball-cleanup/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4141,7 +4190,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/tennis-preparation/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/tennis-preparation/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4191,7 +4240,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/tool-collection-organization/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/tool-collection-organization/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4242,7 +4291,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/towel-folding-and-stacking/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/towel-folding-and-stacking/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4290,7 +4339,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/tower-of-hanoi-game/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/tower-of-hanoi-game/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4338,7 +4387,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/toy-robot/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/toy-robot/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4385,7 +4434,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/transfer-items-with-a-tray/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/transfer-items-with-a-tray/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4432,7 +4481,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/transfer-storage-items/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/transfer-storage-items/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4479,7 +4528,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/trash-sorting/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/trash-sorting/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4527,7 +4576,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/unload-dish-rack/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/unload-dish-rack/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4575,7 +4624,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/untie-shoelaces/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/untie-shoelaces/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4621,7 +4670,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/usb-cable-disassembling/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/usb-cable-disassembling/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4671,7 +4720,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/usb-plugging/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/usb-plugging/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4721,7 +4770,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/vacuum-dirty-surface/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/vacuum-dirty-surface/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4770,7 +4819,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/whiteboard-supplies-organization/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/whiteboard-supplies-organization/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4818,7 +4867,7 @@
           <div class="section">
             <div class="section-title">Sample videos</div>
             <div class="video-grid"><div class="video-player">
-              <video width="320" height="180" controls preload="none" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
+              <video width="320" height="180" controls preload="metadata" style="background: #000; border-radius: 8px; width: 100%; max-width: 320px;">
                 <source src="assets/wrap-a-toy-for-storage/file-000.h264.mp4" type="video/mp4">
                 Your browser does not support HTML5 video. <a href="assets/wrap-a-toy-for-storage/file-000.h264.mp4" target="_blank">Download video</a>
               </video>
@@ -4865,12 +4914,18 @@
       const H = iH + mT + mB;
       const n = data.length;
       const maxVal = data[0].value;
-      const logMax = Math.log10(maxVal);
       const slotW = iW / n;
       const barW = Math.max(slotW * 0.68, 3);
       const NS = 'http://www.w3.org/2000/svg';
 
-      function logH(v) { return v <= 0 ? 0 : (Math.log10(Math.max(v,1)) / logMax) * iH; }
+      // nice round step for ~3-4 gridlines on a linear axis (keep the top end sparse)
+      const rawStep = maxVal / 4;
+      const mag = Math.pow(10, Math.floor(Math.log10(rawStep)));
+      const norm = rawStep / mag;
+      const step = (norm < 1.2 ? 1 : norm < 2.5 ? 2 : norm < 6 ? 5 : 10) * mag;
+      const niceMax = Math.ceil(maxVal / step) * step;
+
+      function barH(v) { return v <= 0 ? 0 : (v / niceMax) * iH; }
 
       const svg = document.createElementNS(NS, 'svg');
       svg.setAttribute('width', '100%');
@@ -4882,16 +4937,16 @@
       g.setAttribute('transform', `translate(${mL},${mT})`);
       svg.appendChild(g);
 
-      // log-scale gridlines at powers of 10
+      // linear gridlines at nice round intervals
       const ticks = [];
-      for (let p = 1; Math.pow(10,p) <= maxVal * 1.5; p++) ticks.push(Math.pow(10,p));
+      for (let v = step; v <= niceMax + 1e-9; v += step) ticks.push(v);
       ticks.forEach((v, ti) => {
-        const y = iH - logH(v);
+        const y = iH - barH(v);
         if (y < 0 || y > iH + 4) return;
         const line = document.createElementNS(NS, 'line');
         line.setAttribute('x1', 0); line.setAttribute('x2', iW);
         line.setAttribute('y1', y); line.setAttribute('y2', y);
-        line.setAttribute('stroke', v === 1 ? 'rgba(0,0,0,0.18)' : 'rgba(0,0,0,0.08)');
+        line.setAttribute('stroke', ti === ticks.length - 1 ? 'rgba(0,0,0,0.18)' : 'rgba(0,0,0,0.08)');
         line.setAttribute('stroke-dasharray', '4,4');
         g.appendChild(line);
         const txt = document.createElementNS(NS, 'text');
@@ -4913,7 +4968,7 @@
       // bars + x-axis labels
       const rects = [];
       data.forEach((d, i) => {
-        const fullH = Math.max(logH(d.value), 2);
+        const fullH = Math.max(barH(d.value), 2);
         const bx = i * slotW + (slotW - barW) / 2;
         const cx = i * slotW + slotW / 2;
 
