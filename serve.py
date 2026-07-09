@@ -58,11 +58,24 @@ def save_prompt(task: str, prompt: str) -> str:
 class Handler(SimpleHTTPRequestHandler):
     def translate_path(self, path):
         result = super().translate_path(path)
-        if not os.path.exists(result):
-            rel = os.path.relpath(result, ROOT)
-            fallback = os.path.join(DATA_ROOT, rel)
-            if os.path.exists(fallback):
-                return fallback
+        if os.path.exists(result):
+            return result
+        rel = os.path.relpath(result, ROOT)
+        # Strip leading 'assets/' so we_d900 task dirs are found directly
+        parts = rel.split(os.sep, 1)
+        data_rel = parts[1] if parts[0] == 'assets' and len(parts) > 1 else rel
+        fallback = os.path.join(DATA_ROOT, data_rel)
+        if os.path.exists(fallback):
+            return fallback
+        # For video files, walk the task directory to find by filename alone
+        data_parts = data_rel.split(os.sep)
+        if len(data_parts) >= 2 and data_parts[-1].endswith('.mp4'):
+            task_dir = os.path.join(DATA_ROOT, data_parts[0])
+            filename = data_parts[-1]
+            if os.path.isdir(task_dir):
+                for dirpath, _, files in os.walk(task_dir):
+                    if filename in files:
+                        return os.path.join(dirpath, filename)
         return result
 
     def _json(self, code, obj):
