@@ -169,6 +169,13 @@
       }
       .subtask-variant-label:first-child { margin-top: 0; }
     </style>
+
+    <style id="hardware-css">
+      .part-thumb { width: 44px; height: 58px; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); display: block; background: var(--bg-section); }
+      .step-row { display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+      .step-text { flex: 1; min-width: 220px; }
+      .step-img { width: 200px; max-width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); display: block; flex-shrink: 0; }
+    </style>
   </head>
 <body>
 <div class="page-outer">
@@ -283,26 +290,27 @@
       <div style="overflow-x:auto; margin-bottom:32px;">
         <table style="width:100%; border-collapse:collapse; font-size:14px;">
           <thead><tr style="border-bottom:2px solid var(--line);">
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Image</th>
             <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Item</th>
             <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Size</th>
             <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Qty</th>
           </tr></thead>
           <tbody>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">5×10</td><td style="padding:8px 12px;">77</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">5×8</td><td style="padding:8px 12px;">14</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">T shim</td><td style="padding:8px 12px;">5mm</td><td style="padding:8px 12px;">83</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Screw</td><td style="padding:8px 12px;">8mm</td><td style="padding:8px 12px;">18</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">3×6</td><td style="padding:8px 12px;">2</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">3×20</td><td style="padding:8px 12px;">2</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Single black beam</td><td style="padding:8px 12px;">120×2cm</td><td style="padding:8px 12px;">8</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Double black beam</td><td style="padding:8px 12px;">100×4cm</td><td style="padding:8px 12px;">2</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Short black beam</td><td style="padding:8px 12px;">40×2cm</td><td style="padding:8px 12px;">1</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Fixed support beam</td><td style="padding:8px 12px;">T-Shape</td><td style="padding:8px 12px;">2</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Fixed support beam</td><td style="padding:8px 12px;">L-Shape</td><td style="padding:8px 12px;">14</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Fixed support beam</td><td style="padding:8px 12px;">Rectangle</td><td style="padding:8px 12px;">6</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Diagonal white beam</td><td style="padding:8px 12px;">30×2cm</td><td style="padding:8px 12px;">4</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Foam corner protector</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">2</td></tr>
-            <tr><td style="padding:8px 12px;">Plastic corner protector</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">13</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/01_hexagon_bolt_5x10.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/01_hexagon_bolt_5x10.jpg" loading="lazy" alt="Hexagon bolt 5x10"></a></td><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">5×10</td><td style="padding:8px 12px;">77</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/02_hexagon_bolt_5x8.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/02_hexagon_bolt_5x8.jpg" loading="lazy" alt="Hexagon bolt 5x8"></a></td><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">5×8</td><td style="padding:8px 12px;">14</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/03_t_shim_5mm.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/03_t_shim_5mm.jpg" loading="lazy" alt="T shim 5mm"></a></td><td style="padding:8px 12px;">T shim</td><td style="padding:8px 12px;">5mm</td><td style="padding:8px 12px;">83</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/04_screw_8mm.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/04_screw_8mm.jpg" loading="lazy" alt="Screw 8mm"></a></td><td style="padding:8px 12px;">Screw</td><td style="padding:8px 12px;">8mm</td><td style="padding:8px 12px;">18</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/05_hexagon_bolt_3x6.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/05_hexagon_bolt_3x6.jpg" loading="lazy" alt="Hexagon bolt 3x6"></a></td><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">3×6</td><td style="padding:8px 12px;">2</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/06_hexagon_bolt_3x20.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/06_hexagon_bolt_3x20.jpg" loading="lazy" alt="Hexagon bolt 3x20"></a></td><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">3×20</td><td style="padding:8px 12px;">2</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/07_single_black_beam_120x2cm.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/07_single_black_beam_120x2cm.jpg" loading="lazy" alt="Single black beam 120x2cm"></a></td><td style="padding:8px 12px;">Single black beam</td><td style="padding:8px 12px;">120×2cm</td><td style="padding:8px 12px;">8</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/08_double_black_beam_100x4cm.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/08_double_black_beam_100x4cm.jpg" loading="lazy" alt="Double black beam 100x4cm"></a></td><td style="padding:8px 12px;">Double black beam</td><td style="padding:8px 12px;">100×4cm</td><td style="padding:8px 12px;">2</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/09_short_black_beam_40x2cm.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/09_short_black_beam_40x2cm.jpg" loading="lazy" alt="Short black beam 40x2cm"></a></td><td style="padding:8px 12px;">Short black beam</td><td style="padding:8px 12px;">40×2cm</td><td style="padding:8px 12px;">1</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/10_fixed_support_beam_T-shape.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/10_fixed_support_beam_T-shape.jpg" loading="lazy" alt="Fixed support beam T-Shape"></a></td><td style="padding:8px 12px;">Fixed support beam</td><td style="padding:8px 12px;">T-Shape</td><td style="padding:8px 12px;">2</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/11_fixed_support_beam_L-shape.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/11_fixed_support_beam_L-shape.jpg" loading="lazy" alt="Fixed support beam L-Shape"></a></td><td style="padding:8px 12px;">Fixed support beam</td><td style="padding:8px 12px;">L-Shape</td><td style="padding:8px 12px;">14</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/12_fixed_support_beam_rectangle.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/12_fixed_support_beam_rectangle.jpg" loading="lazy" alt="Fixed support beam Rectangle"></a></td><td style="padding:8px 12px;">Fixed support beam</td><td style="padding:8px 12px;">Rectangle</td><td style="padding:8px 12px;">6</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/13_diagonal_white_beam_30x2cm.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/13_diagonal_white_beam_30x2cm.jpg" loading="lazy" alt="Diagonal white beam 30x2cm"></a></td><td style="padding:8px 12px;">Diagonal white beam</td><td style="padding:8px 12px;">30×2cm</td><td style="padding:8px 12px;">4</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/14_foam_corner_protector.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/14_foam_corner_protector.jpg" loading="lazy" alt="Foam corner protector"></a></td><td style="padding:8px 12px;">Foam corner protector</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">2</td></tr>
+            <tr><td style="padding:8px 12px;"><a href="figures/hardware/1.1_frame/15_plastic_corner_protector.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.1_frame/15_plastic_corner_protector.jpg" loading="lazy" alt="Plastic corner protector"></a></td><td style="padding:8px 12px;">Plastic corner protector</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">13</td></tr>
           </tbody>
         </table>
       </div>
@@ -311,19 +319,20 @@
       <div style="overflow-x:auto; margin-bottom:32px;">
         <table style="width:100%; border-collapse:collapse; font-size:14px;">
           <thead><tr style="border-bottom:2px solid var(--line);">
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Image</th>
             <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Item</th>
             <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Size</th>
             <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Qty</th>
           </tr></thead>
           <tbody>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Fixed support — camera</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">2</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Fixed support — robot arm</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">4</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Robot arm</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">2</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Gello</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">2</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">8</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">T shim</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">8</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">3×8</td><td style="padding:8px 12px;">6</td></tr>
-            <tr><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">3×6</td><td style="padding:8px 12px;">4</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.2_arms_gello/16_fixed_support_camera.png" target="_blank"><img class="part-thumb" src="figures/hardware/1.2_arms_gello/16_fixed_support_camera.png" loading="lazy" alt="Fixed support camera"></a></td><td style="padding:8px 12px;">Fixed support — camera</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">2</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.2_arms_gello/17_fixed_support_robot_arm.png" target="_blank"><img class="part-thumb" src="figures/hardware/1.2_arms_gello/17_fixed_support_robot_arm.png" loading="lazy" alt="Fixed support robot arm"></a></td><td style="padding:8px 12px;">Fixed support — robot arm</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">4</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.2_arms_gello/18_robot_arm.png" target="_blank"><img class="part-thumb" src="figures/hardware/1.2_arms_gello/18_robot_arm.png" loading="lazy" alt="Robot arm"></a></td><td style="padding:8px 12px;">Robot arm</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">2</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.2_arms_gello/19_gello.png" target="_blank"><img class="part-thumb" src="figures/hardware/1.2_arms_gello/19_gello.png" loading="lazy" alt="Gello"></a></td><td style="padding:8px 12px;">Gello</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">2</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.2_arms_gello/20_hexagon_bolt.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.2_arms_gello/20_hexagon_bolt.jpg" loading="lazy" alt="Hexagon bolt"></a></td><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">8</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.2_arms_gello/21_t_shim.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.2_arms_gello/21_t_shim.jpg" loading="lazy" alt="T shim"></a></td><td style="padding:8px 12px;">T shim</td><td style="padding:8px 12px;">—</td><td style="padding:8px 12px;">8</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.2_arms_gello/22_hexagon_bolt_3x8.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.2_arms_gello/22_hexagon_bolt_3x8.jpg" loading="lazy" alt="Hexagon bolt 3x8"></a></td><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">3×8</td><td style="padding:8px 12px;">6</td></tr>
+            <tr><td style="padding:8px 12px;"><a href="figures/hardware/1.2_arms_gello/23_hexagon_bolt_3x6.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.2_arms_gello/23_hexagon_bolt_3x6.jpg" loading="lazy" alt="Hexagon bolt 3x6"></a></td><td style="padding:8px 12px;">Hexagon bolt</td><td style="padding:8px 12px;">3×6</td><td style="padding:8px 12px;">4</td></tr>
           </tbody>
         </table>
       </div>
@@ -332,16 +341,17 @@
       <div style="overflow-x:auto; margin-bottom:48px;">
         <table style="width:100%; border-collapse:collapse; font-size:14px;">
           <thead><tr style="border-bottom:2px solid var(--line);">
+            <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Image</th>
             <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Item</th>
             <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">Qty</th>
           </tr></thead>
           <tbody>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Case</td><td style="padding:8px 12px;">1</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Monitor</td><td style="padding:8px 12px;">1</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Keyboard</td><td style="padding:8px 12px;">1</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">Mouse</td><td style="padding:8px 12px;">1</td></tr>
-            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;">USB Foot Switch</td><td style="padding:8px 12px;">1</td></tr>
-            <tr><td style="padding:8px 12px;">Floor-standing monitor</td><td style="padding:8px 12px;">1</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.3_computers/24_case.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.3_computers/24_case.jpg" loading="lazy" alt="Case"></a></td><td style="padding:8px 12px;">Case</td><td style="padding:8px 12px;">1</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.3_computers/25_monitor.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.3_computers/25_monitor.jpg" loading="lazy" alt="Monitor"></a></td><td style="padding:8px 12px;">Monitor</td><td style="padding:8px 12px;">1</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.3_computers/26_keyboard.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.3_computers/26_keyboard.jpg" loading="lazy" alt="Keyboard"></a></td><td style="padding:8px 12px;">Keyboard</td><td style="padding:8px 12px;">1</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.3_computers/27_mouse.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.3_computers/27_mouse.jpg" loading="lazy" alt="Mouse"></a></td><td style="padding:8px 12px;">Mouse</td><td style="padding:8px 12px;">1</td></tr>
+            <tr style="border-bottom:1px solid var(--line);"><td style="padding:8px 12px;"><a href="figures/hardware/1.3_computers/28_usb_foot_switch.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.3_computers/28_usb_foot_switch.jpg" loading="lazy" alt="USB Foot Switch"></a></td><td style="padding:8px 12px;">USB Foot Switch</td><td style="padding:8px 12px;">1</td></tr>
+            <tr><td style="padding:8px 12px;"><a href="figures/hardware/1.3_computers/29_floor_standing_monitor.jpg" target="_blank"><img class="part-thumb" src="figures/hardware/1.3_computers/29_floor_standing_monitor.jpg" loading="lazy" alt="Floor-standing monitor"></a></td><td style="padding:8px 12px;">Floor-standing monitor</td><td style="padding:8px 12px;">1</td></tr>
           </tbody>
         </table>
       </div>
@@ -349,26 +359,26 @@
       <h3 style="font-family:'Times New Roman',Times,serif; font-size:clamp(18px,1.6vw,24px); font-weight:700; color:#111827; margin:0 0 20px;">2. Installation Steps</h3>
 
       <h4 style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin:0 0 14px;">2.1 Workflat &amp; Frame</h4>
-      <ol style="margin:0 0 32px; padding-left:20px; display:flex; flex-direction:column; gap:10px; font-size:15px; line-height:1.6;">
-        <li>Assemble three 120×2cm bars into a U-shape around the table frame.</li>
-        <li>Attach three pieces of 120×2cm wood to the bottom of the two 120×2cm pieces, with a distance of 26cm between the table and the middle piece, and 15cm from the middle piece to the outermost one.</li>
-        <li>Use a 100×4cm piece positioned vertically at a distance of 51cm from the end of the horizontal beam. Secure it using an L-bracket and a diagonal brace.</li>
-        <li>Install the top horizontal beam, secure it using two diagonal braces, and add another horizontal beam below the diagonal braces.</li>
-        <li>Install the vertical beam between the two horizontal beams, securing it with two T-shaped horizontal beam spacers.</li>
-        <li>Install the camera at the bottom position of the 40×2cm beam.</li>
+      <ol style="margin:0 0 32px; padding-left:20px; display:flex; flex-direction:column; gap:16px; font-size:15px; line-height:1.6;">
+        <li><div class="step-row"><span class="step-text">Assemble three 120×2cm bars into a U-shape around the table frame.</span><a href="figures/hardware/2_installation/2.1_step1_frame_U_shape.png" target="_blank"><img class="step-img" src="figures/hardware/2_installation/2.1_step1_frame_U_shape.png" loading="lazy" alt="Frame U-shape step"></a></div></li>
+        <li><div class="step-row"><span class="step-text">Attach three pieces of 120×2cm wood to the bottom of the two 120×2cm pieces, with a distance of 26cm between the table and the middle piece, and 15cm from the middle piece to the outermost one.</span><a href="figures/hardware/2_installation/2.1_step2_bottom_beams.png" target="_blank"><img class="step-img" src="figures/hardware/2_installation/2.1_step2_bottom_beams.png" loading="lazy" alt="Bottom beams step"></a></div></li>
+        <li><div class="step-row"><span class="step-text">Use a 100×4cm piece positioned vertically at a distance of 51cm from the end of the horizontal beam. Secure it using an L-bracket and a diagonal brace.</span><a href="figures/hardware/2_installation/2.1_step3_vertical_100x4_L_bracket.jpg" target="_blank"><img class="step-img" src="figures/hardware/2_installation/2.1_step3_vertical_100x4_L_bracket.jpg" loading="lazy" alt="Vertical beam L-bracket step"></a></div></li>
+        <li><div class="step-row"><span class="step-text">Install the top horizontal beam, secure it using two diagonal braces, and add another horizontal beam below the diagonal braces.</span><a href="figures/hardware/2_installation/2.1_step4_top_horizontal_beam.jpg" target="_blank"><img class="step-img" src="figures/hardware/2_installation/2.1_step4_top_horizontal_beam.jpg" loading="lazy" alt="Top horizontal beam step"></a></div></li>
+        <li><div class="step-row"><span class="step-text">Install the vertical beam between the two horizontal beams, securing it with two T-shaped horizontal beam spacers.</span><a href="figures/hardware/2_installation/2.1_step5_vertical_beam_T_spacers.jpg" target="_blank"><img class="step-img" src="figures/hardware/2_installation/2.1_step5_vertical_beam_T_spacers.jpg" loading="lazy" alt="Vertical beam T-spacers step"></a></div></li>
+        <li><div class="step-row"><span class="step-text">Install the camera at the bottom position of the 40×2cm beam.</span><a href="figures/hardware/2_installation/2.1_step6_camera_40cm_beam.jpg" target="_blank"><img class="step-img" src="figures/hardware/2_installation/2.1_step6_camera_40cm_beam.jpg" loading="lazy" alt="Camera mount step"></a></div></li>
       </ol>
 
       <h4 style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin:0 0 14px;">2.2 Robotic Arms &amp; Gello</h4>
-      <ol style="margin:0 0 32px; padding-left:20px; display:flex; flex-direction:column; gap:10px; font-size:15px; line-height:1.6;">
-        <li>Use clamps to secure the two robot arms, with a distance of 25cm from the edge of the table.</li>
-        <li>Attach the camera to the top of the robot arm using a camera mount.</li>
-        <li>Secure the gello to the two outer metal bars, with a distance of 5cm from the edge of the table.</li>
+      <ol style="margin:0 0 32px; padding-left:20px; display:flex; flex-direction:column; gap:16px; font-size:15px; line-height:1.6;">
+        <li><div class="step-row"><span class="step-text">Use clamps to secure the two robot arms, with a distance of 25cm from the edge of the table.</span><a href="figures/hardware/2_installation/2.2_step1_clamp_robot_arms.png" target="_blank"><img class="step-img" src="figures/hardware/2_installation/2.2_step1_clamp_robot_arms.png" loading="lazy" alt="Clamp robot arms step"></a></div></li>
+        <li><div class="step-row"><span class="step-text">Attach the camera to the top of the robot arm using a camera mount.</span><a href="figures/hardware/2_installation/2.2_step2_camera_mount.png" target="_blank"><img class="step-img" src="figures/hardware/2_installation/2.2_step2_camera_mount.png" loading="lazy" alt="Camera mount step"></a></div></li>
+        <li><div class="step-row"><span class="step-text">Secure the gello to the two outer metal bars, with a distance of 5cm from the edge of the table.</span><a href="figures/hardware/2_installation/2.2_step3_gello.png" target="_blank"><img class="step-img" src="figures/hardware/2_installation/2.2_step3_gello.png" loading="lazy" alt="Gello mount step"></a></div></li>
       </ol>
 
       <h4 style="font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin:0 0 14px;">2.3 Computers &amp; Accessories</h4>
-      <ol style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:10px; font-size:15px; line-height:1.6;">
+      <ol style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:16px; font-size:15px; line-height:1.6;">
         <li>Connect the monitor, keyboard, mouse, and foot switch to the computer using the USB hub.</li>
-        <li>Use USB 2.0 for the gello and robot arm. Use USB 10G for the top camera. One robot arm camera uses a USB 5GB port, while the other uses a Type-C port through an adapter.</li>
+        <li><div class="step-row"><span class="step-text">Use USB 2.0 for the gello and robot arm. Use USB 10G for the top camera. One robot arm camera uses a USB 5GB port, while the other uses a Type-C port through an adapter.</span><a href="figures/hardware/2_installation/2.3_step2_usb_wiring.jpg" target="_blank"><img class="step-img" src="figures/hardware/2_installation/2.3_step2_usb_wiring.jpg" loading="lazy" alt="USB wiring step"></a></div></li>
       </ol>
       </div>
     </section><!-- /#view-setup -->
