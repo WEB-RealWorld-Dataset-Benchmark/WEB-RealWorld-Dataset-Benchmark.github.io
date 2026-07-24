@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://web-realworld-dataset-benchmark.github.io/sitemap.xml
