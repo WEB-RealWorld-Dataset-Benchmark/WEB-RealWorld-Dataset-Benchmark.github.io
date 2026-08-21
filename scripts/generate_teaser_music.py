@@ -59,6 +59,30 @@ def add_epiano(track, start, seconds, freq, gain, pan=0.0):
     track[start_i:start_i + length, 1] += gain * right * x
 
 
+def add_sax(track, start, seconds, freq, gain, rng, pan=0.08):
+    """A restrained breathy sax-like lead with slow vibrato."""
+    start_i = int(start * SAMPLE_RATE)
+    length = min(int(seconds * SAMPLE_RATE), len(track) - start_i)
+    if length <= 0:
+        return
+    t = np.arange(length) / SAMPLE_RATE
+    vibrato = 0.006 * np.sin(2 * np.pi * 5.1 * t) * (1 - np.exp(-t * 3.0))
+    phase = 2 * np.pi * freq * np.cumsum(1 + vibrato) / SAMPLE_RATE
+    x = np.sin(phase) + 0.34 * np.sin(2 * phase + 0.2) + 0.12 * np.sin(3 * phase + 0.7)
+    breath = rng.normal(0, 1, length)
+    breath = np.convolve(breath, np.ones(18) / 18, mode="same")
+    x = 0.62 * x + 0.055 * breath
+    env = np.ones(length)
+    attack = min(int(0.11 * SAMPLE_RATE), length)
+    release = min(int(0.38 * SAMPLE_RATE), length)
+    env[:attack] = np.linspace(0, 1, attack)
+    env[-release:] *= np.linspace(1, 0, release)
+    left = np.sqrt((1 - pan) / 2)
+    right = np.sqrt((1 + pan) / 2)
+    track[start_i:start_i + length, 0] += gain * left * x * env
+    track[start_i:start_i + length, 1] += gain * right * x * env
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("output")
@@ -81,31 +105,49 @@ def main():
     chord_count = int(np.ceil(args.duration / chord_len))
     for i in range(chord_count):
         start = i * chord_len
+        progress = start / args.duration
         chord = chords[i % len(chords)]
+        piano_gain = 0.050 if progress < 0.14 else (0.068 if progress < 0.82 else 0.045)
         for n, freq in enumerate(chord):
-            add_epiano(mix, start, chord_len + 0.35, freq, 0.068, pan=(-0.46 + n * 0.23))
+            add_epiano(mix, start, chord_len + 0.35, freq, piano_gain, pan=(-0.46 + n * 0.23))
         root = roots[i % len(roots)]
-        add_note(mix, start, BEAT * 1.8, root, 0.095, attack=0.08, release=0.55)
-        add_note(mix, start + 2 * BEAT, BEAT * 1.55, root * 1.5, 0.065, attack=0.06, release=0.5)
+        if 0.04 < progress < 0.93:
+            bass_gain = 0.105 if progress < 0.34 else 0.135
+            add_note(mix, start, BEAT * 1.35, root, bass_gain, attack=0.07, release=0.45)
+            add_note(mix, start + 1.5 * BEAT, BEAT * 0.8, root * 1.5, bass_gain * 0.62, attack=0.04, release=0.32)
+            if 0.30 < progress < 0.84:
+                add_note(mix, start + 3 * BEAT, BEAT * 0.72, root * 2, bass_gain * 0.48, attack=0.04, release=0.28)
 
-    # Sparse upper-register piano phrases, leaving plenty of room for the visuals.
-    scale = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88]
-    motif = [2, 4, 6, 4, 3, 1, 2, 5]
+    # Short sax responses enter only after the arrangement has opened up.
+    sax_scale = [293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25]
+    sax_phrases = [
+        [(0.0, 2, 1.25), (1.5, 4, 0.7), (2.5, 3, 1.1)],
+        [(0.0, 1, 0.7), (1.0, 3, 0.8), (2.0, 5, 1.5)],
+        [(0.0, 4, 1.0), (1.25, 6, 0.65), (2.25, 4, 1.35)],
+    ]
+    for block in range(3, chord_count, 4):
+        start = block * chord_len
+        progress = start / args.duration
+        if not 0.34 < progress < 0.84:
+            continue
+        phrase = sax_phrases[(block // 4) % len(sax_phrases)]
+        sax_gain = 0.050 if progress < 0.58 else 0.066
+        for beat_offset, note_idx, beats_long in phrase:
+            add_sax(mix, start + beat_offset * BEAT, beats_long * BEAT, sax_scale[note_idx], sax_gain, rng)
+
+    # Evolving soft-house groove: four-on-the-floor, brushed hats, then a gentle exit.
     total_beats = int(args.duration / BEAT)
     for beat_i in range(total_beats):
-        if beat_i % 4 in (1, 3) and (beat_i // 4) % 2 == 0:
-            idx = motif[(beat_i // 2) % len(motif)]
-            pan = -0.22 if beat_i % 4 == 1 else 0.22
-            add_epiano(mix, beat_i * BEAT, BEAT * 1.2, scale[idx], 0.040, pan=pan)
-
-    # Hotel-lounge rhythm: a soft downbeat and quiet brushed offbeats.
-    for beat_i in range(total_beats):
+        progress = (beat_i * BEAT) / args.duration
+        if not 0.12 < progress < 0.89:
+            continue
+        groove = min(1.0, (progress - 0.12) / 0.22) * min(1.0, (0.89 - progress) / 0.10)
         start_i = int(beat_i * BEAT * SAMPLE_RATE)
         kick_len = min(int(0.23 * SAMPLE_RATE), frames - start_i)
-        if kick_len > 0 and beat_i % 4 == 0:
+        if kick_len > 0:
             t = np.arange(kick_len) / SAMPLE_RATE
             phase = 2 * np.pi * (72 * t - 35 * t * t)
-            kick = np.sin(phase) * np.exp(-t * 18) * 0.10
+            kick = np.sin(phase) * np.exp(-t * 18) * (0.095 * groove)
             mix[start_i:start_i + kick_len] += kick[:, None]
         hat_start = int((beat_i + 0.5) * BEAT * SAMPLE_RATE)
         hat_len = min(int(0.11 * SAMPLE_RATE), frames - hat_start)
@@ -113,9 +155,15 @@ def main():
             t = np.arange(hat_len) / SAMPLE_RATE
             noise = rng.normal(0, 1, hat_len)
             noise = np.concatenate(([0], np.diff(noise)))
-            hat = noise * np.exp(-t * 30) * 0.010
+            hat_gain = 0.008 + (0.006 if progress > 0.46 else 0.0)
+            hat = noise * np.exp(-t * 30) * hat_gain * groove
             mix[hat_start:hat_start + hat_len, 0] += hat * 0.8
             mix[hat_start:hat_start + hat_len, 1] += hat
+        if beat_i % 4 in (1, 3) and progress > 0.28:
+            clap_len = min(int(0.10 * SAMPLE_RATE), frames - start_i)
+            t = np.arange(clap_len) / SAMPLE_RATE
+            clap = rng.normal(0, 1, clap_len) * np.exp(-t * 34) * 0.012 * groove
+            mix[start_i:start_i + clap_len] += clap[:, None]
 
     # Subtle room-like delays create width without external samples.
     for delay_s, gain, swap in [(0.19, 0.15, True), (0.37, 0.09, False)]:
@@ -123,7 +171,7 @@ def main():
         source = mix[:-delay, ::-1] if swap else mix[:-delay]
         mix[delay:] += source * gain
 
-    fade = min(int(4.0 * SAMPLE_RATE), frames // 2)
+    fade = min(int(8.0 * SAMPLE_RATE), frames // 2)
     mix[:fade] *= np.linspace(0, 1, fade)[:, None]
     mix[-fade:] *= np.linspace(1, 0, fade)[:, None]
     peak = np.max(np.abs(mix)) or 1.0
