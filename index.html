@@ -133,7 +133,7 @@
     .task-meta { font-family: 'IBM Plex Mono', ui-monospace, monospace; margin-top: 4px; color: var(--muted); font-size: 14px; }
     .badge { font-family: 'IBM Plex Mono', ui-monospace, monospace; display: inline-flex; align-items: center; border-radius: 999px; padding: 8px 12px; font-size: 13px; font-weight: 600; white-space: nowrap; }
     .badge.present { background: var(--soft-green); color: var(--accent2); }
-    .task-body { border-top: 1px solid var(--line); padding: 16px 18px 20px; }
+    .task-body { border-top: 1px solid var(--line); padding: 18px 20px 24px; line-height: 1.7; }
     .stat-grid { display: none; }
     .label { font-family: 'IBM Plex Mono', ui-monospace, monospace; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
     .value { font-weight: 600; word-break: break-word; }
@@ -146,6 +146,8 @@
     }
     .prompt { white-space: pre-wrap; line-height: 1.55; margin: 0; }
     .prompt.present { color: var(--text); }
+    .task-body .prompt { font-size: 18px; line-height: 1.75; }
+    .task-body .section { margin-top: 22px; }
     .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .pill { font-family: 'IBM Plex Mono', ui-monospace, monospace; display: inline-flex; border-radius: 999px; padding: 6px 10px; border: 1px solid var(--line); background: rgba(255,255,255,0.8); font-size: 13px; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
@@ -220,8 +222,8 @@
     <style id="subtask-css">
       .subtask-section ol { margin: 0; padding-left: 20px; }
       .subtask-section li {
-        font-size: 15px; line-height: 1.5; color: var(--text);
-        padding: 2px 0;
+        font-size: 18px; line-height: 1.7; color: var(--text);
+        padding: 4px 0;
       }
       .subtask-variant-label {
         font-size: 12px; font-weight: 700; color: var(--muted);
