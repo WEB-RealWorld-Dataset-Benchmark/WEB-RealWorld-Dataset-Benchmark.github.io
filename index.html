@@ -145,6 +145,13 @@
     .pill { font-family: 'IBM Plex Mono', ui-monospace, monospace; display: inline-flex; border-radius: 999px; padding: 6px 10px; border: 1px solid var(--line); background: rgba(255,255,255,0.8); font-size: 13px; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
     .video-player { text-align: center; }
+    .video-player video {
+      width: 100% !important;
+      max-width: 960px !important;
+      height: auto;
+      aspect-ratio: 16 / 3;
+      object-fit: contain;
+    }
     .montage-wrap { text-align: left; }
     .montage-wrap img { margin: 0; }
     .video-label { font-family: 'IBM Plex Mono', ui-monospace, monospace; margin-top: 8px; font-size: 13px; color: var(--muted); word-break: break-all; }
