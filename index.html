@@ -118,6 +118,8 @@
       background: #000;
     }
     .teaser-caption { text-align: center; margin: 14px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .teaser-caption .music-credit { display: block; margin-top: 4px; font-size: 12px; }
+    .teaser-caption .music-credit a { color: inherit; text-underline-offset: 2px; }
     .grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 18px 0 26px; }
     .card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); }
     .task-card { background: var(--bg-section); border: 1px solid var(--line); box-shadow: var(--shadow); }
@@ -303,7 +305,10 @@
         <source src="assets/teaser_2.mp4" type="video/mp4">
         Your browser does not support HTML5 video. <a href="assets/teaser_2.mp4" target="_blank">Download video</a>
       </video>
-      <p class="teaser-caption">WEB-1K captures large-scale, high-fidelity bimanual manipulation demonstrations across 90 real-world tasks.</p>
+      <p class="teaser-caption">
+        WEB-1K captures large-scale, high-fidelity bimanual manipulation demonstrations across 90 real-world tasks.
+        <span class="music-credit">Music: <a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100806" target="_blank" rel="noopener">“Airport Lounge” by Kevin MacLeod</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</span>
+      </p>
     </div>
 
     <h2 class="sec-heading">Dataset Statistics</h2>
